@@ -1,0 +1,39 @@
+# ===== PDF Processing =====
+PyMuPDF>=1.24               # fitz - PDF text extraction & image rendering
+
+# ===== Image Processing =====
+numpy>=1.26,<2                  # numerical arrays (must be <2 for ChromaDB ONNX)
+opencv-python>=4.9           # cv2 - image quality analysis & enhancements
+Pillow>=10.0                 # PIL - image loading, resizing, format conversion
+
+# ===== Scientific Computing =====
+scipy>=1.11                  # sparse matrix I/O
+scikit-learn>=1.4            # TfidfVectorizer, BM25, ML utilities
+joblib>=1.3                  # model serialization
+
+# ===== HTTP & Networking =====
+requests>=2.31               # synchronous HTTP client (OpenRouter, Gemini, Wikipedia)
+httpx>=0.27,<1               # async HTTP client (MCP streamable-http transport)
+urllib3>=2.0                 # connection pooling & retry
+
+# ===== Embeddings & Vector DB =====
+sentence-transformers>=3.4,<6  # BGE-M3 embeddings
+chromadb>=1.0,<2               # vector store (persistent, in-project)
+
+# ===== Agent Framework =====
+langgraph>=1.0,<2              # StateGraph workflow, checkpoint, interrupt
+langgraph-checkpoint-sqlite>=3.0,<4  # SQLite-based checkpoint saver
+mcp>=1.20,<2                   # Model Context Protocol client & server
+pydantic>=2.10,<3              # data models & validation
+
+# ===== Web Server =====
+fastapi>=0.115,<1              # REST API framework
+uvicorn>=0.30,<1               # ASGI server
+python-multipart>=0.0.20,<1    # file upload support
+streamlit>=1.40                # chat UI frontend
+
+# ===== Deep Learning (transitive, installed via sentence-transformers) =====
+# torch, transformers, tokenizers — pulled automatically by sentence-transformers
+
+# ===== Object Detection =====
+ultralytics>=8.1                    # YOLOv8 underwater object detection

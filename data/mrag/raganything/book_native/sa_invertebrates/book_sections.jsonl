@@ -1,0 +1,13 @@
+{"section_id": "sa_front_matter", "title": "Front matter and identification instructions", "start_pdf_page": 1, "end_pdf_page": 25, "section_type": "front_matter"}
+{"section_id": "sa_table_of_taxa", "title": "Table of Taxa in Field Guide", "start_pdf_page": 26, "end_pdf_page": 39, "section_type": "taxa_catalog"}
+{"section_id": "sa_phylum_porifera", "title": "Porifera", "start_pdf_page": 44, "end_pdf_page": 67, "section_type": "phylum_identification_pages", "taxon_units": 24}
+{"section_id": "sa_phylum_cnidaria", "title": "Cnidaria", "start_pdf_page": 72, "end_pdf_page": 118, "section_type": "phylum_identification_pages", "taxon_units": 47}
+{"section_id": "sa_phylum_sipuncula", "title": "Sipuncula", "start_pdf_page": 122, "end_pdf_page": 122, "section_type": "phylum_identification_pages", "taxon_units": 1}
+{"section_id": "sa_phylum_annelida", "title": "Annelida", "start_pdf_page": 127, "end_pdf_page": 135, "section_type": "phylum_identification_pages", "taxon_units": 9}
+{"section_id": "sa_phylum_arthropoda", "title": "Arthropoda", "start_pdf_page": 140, "end_pdf_page": 229, "section_type": "phylum_identification_pages", "taxon_units": 90}
+{"section_id": "sa_phylum_bryozoa", "title": "Bryozoa", "start_pdf_page": 232, "end_pdf_page": 246, "section_type": "phylum_identification_pages", "taxon_units": 15}
+{"section_id": "sa_phylum_brachiopoda", "title": "Brachiopoda", "start_pdf_page": 250, "end_pdf_page": 251, "section_type": "phylum_identification_pages", "taxon_units": 2}
+{"section_id": "sa_phylum_mollusca", "title": "Mollusca", "start_pdf_page": 256, "end_pdf_page": 393, "section_type": "phylum_identification_pages", "taxon_units": 131}
+{"section_id": "sa_phylum_echinodermata", "title": "Echinodermata", "start_pdf_page": 401, "end_pdf_page": 479, "section_type": "phylum_identification_pages", "taxon_units": 79}
+{"section_id": "sa_phylum_chordata", "title": "Chordata", "start_pdf_page": 484, "end_pdf_page": 493, "section_type": "phylum_identification_pages", "taxon_units": 10}
+{"section_id": "sa_phylum_hemichordata", "title": "Hemichordata", "start_pdf_page": 496, "end_pdf_page": 496, "section_type": "phylum_identification_pages", "taxon_units": 1}

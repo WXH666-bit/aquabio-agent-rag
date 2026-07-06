@@ -1,0 +1,17 @@
+[
+  {
+    "image_id": "network_800e626c9250",
+    "image_path": "data/mrag/network_images/jellyfish/800e626c92501fdf.png",
+    "image_url": "/files/data/mrag/network_images/jellyfish/800e626c92501fdf.png",
+    "caption": "File:Chironex fleckeri Range Map.svg",
+    "scientific_name": "Jellyfish",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "distribution_map",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Chironex_fleckeri_Range_Map.svg",
+    "license": "Public domain",
+    "map_verified": true
+  }
+]

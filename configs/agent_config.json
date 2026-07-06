@@ -1,0 +1,16 @@
+{
+  "agent": {
+    "max_retry": 2,
+    "enable_query_rewrite": true,
+    "enable_answer_evaluation": true,
+    "enable_source_selection": true
+  },
+  "tools": {
+    "use_mcp": true,
+    "enable_vlm_caption": true,
+    "enable_text_retriever": true,
+    "enable_image_retriever": true,
+    "enable_multimodal_retriever": true,
+    "enable_pdf_retriever": true
+  }
+}

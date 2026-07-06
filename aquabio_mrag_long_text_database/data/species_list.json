@@ -1,0 +1,422 @@
+[
+  {
+    "species_id": "starfish",
+    "english_name": "Starfish",
+    "chinese_name": "海星",
+    "wiki_title": "Starfish",
+    "worms_name": "Asteroidea",
+    "scientific_name": "Asteroidea",
+    "taxonomic_group": "Echinodermata / Asteroidea",
+    "keywords": [
+      "starfish",
+      "sea star",
+      "海星",
+      "放射状",
+      "腕足",
+      "中央盘"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Starfish",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Asteroidea"
+    }
+  },
+  {
+    "species_id": "sea_urchin",
+    "english_name": "Sea urchin",
+    "chinese_name": "海胆",
+    "wiki_title": "Sea_urchin",
+    "worms_name": "Echinoidea",
+    "scientific_name": "Echinoidea",
+    "taxonomic_group": "Echinodermata / Echinoidea",
+    "keywords": [
+      "sea urchin",
+      "echinus",
+      "海胆",
+      "圆形",
+      "棘刺",
+      "棘皮动物"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Sea_urchin",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Echinoidea"
+    }
+  },
+  {
+    "species_id": "sea_cucumber",
+    "english_name": "Sea cucumber",
+    "chinese_name": "海参",
+    "wiki_title": "Sea_cucumber",
+    "worms_name": "Holothuroidea",
+    "scientific_name": "Holothuroidea",
+    "taxonomic_group": "Echinodermata / Holothuroidea",
+    "keywords": [
+      "sea cucumber",
+      "holothurian",
+      "海参",
+      "长条状",
+      "沉积物摄食",
+      "底栖"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Sea_cucumber",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Holothuroidea"
+    }
+  },
+  {
+    "species_id": "scallop",
+    "english_name": "Scallop",
+    "chinese_name": "扇贝",
+    "wiki_title": "Scallop",
+    "worms_name": "Pectinidae",
+    "scientific_name": "Pectinidae",
+    "taxonomic_group": "Mollusca / Bivalvia / Pectinidae",
+    "keywords": [
+      "scallop",
+      "扇贝",
+      "双壳类",
+      "扇形",
+      "放射状壳纹",
+      "滤食"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Scallop",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Pectinidae"
+    }
+  },
+  {
+    "species_id": "jellyfish",
+    "english_name": "Jellyfish",
+    "chinese_name": "水母",
+    "wiki_title": "Jellyfish",
+    "worms_name": "Scyphozoa",
+    "scientific_name": "Scyphozoa / Medusozoa",
+    "taxonomic_group": "Cnidaria / Medusozoa",
+    "keywords": [
+      "jellyfish",
+      "水母",
+      "伞状体",
+      "触手",
+      "透明",
+      "刺胞动物"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Jellyfish",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Scyphozoa"
+    }
+  },
+  {
+    "species_id": "octopus",
+    "english_name": "Octopus",
+    "chinese_name": "章鱼",
+    "wiki_title": "Octopus",
+    "worms_name": "Octopoda",
+    "scientific_name": "Octopoda",
+    "taxonomic_group": "Mollusca / Cephalopoda / Octopoda",
+    "keywords": [
+      "octopus",
+      "章鱼",
+      "八腕",
+      "吸盘",
+      "伪装",
+      "头足类"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Octopus",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Octopoda"
+    }
+  },
+  {
+    "species_id": "squid",
+    "english_name": "Squid",
+    "chinese_name": "鱿鱼",
+    "wiki_title": "Squid",
+    "worms_name": "Decapodiformes",
+    "scientific_name": "Decapodiformes / Teuthida",
+    "taxonomic_group": "Mollusca / Cephalopoda",
+    "keywords": [
+      "squid",
+      "鱿鱼",
+      "头足类",
+      "侧鳍",
+      "触腕",
+      "流线型"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Squid",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Decapodiformes"
+    }
+  },
+  {
+    "species_id": "shrimp",
+    "english_name": "Shrimp",
+    "chinese_name": "虾",
+    "wiki_title": "Shrimp",
+    "worms_name": "Caridea",
+    "scientific_name": "Caridea / Dendrobranchiata",
+    "taxonomic_group": "Arthropoda / Crustacea",
+    "keywords": [
+      "shrimp",
+      "虾",
+      "甲壳类",
+      "长触角",
+      "分节身体",
+      "弯曲腹部"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Shrimp",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Caridea"
+    }
+  },
+  {
+    "species_id": "crab",
+    "english_name": "Crab",
+    "chinese_name": "螃蟹",
+    "wiki_title": "Crab",
+    "worms_name": "Brachyura",
+    "scientific_name": "Brachyura",
+    "taxonomic_group": "Arthropoda / Crustacea / Brachyura",
+    "keywords": [
+      "crab",
+      "螃蟹",
+      "甲壳类",
+      "螯",
+      "横向步足",
+      "宽甲壳"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Crab",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Brachyura"
+    }
+  },
+  {
+    "species_id": "lobster",
+    "english_name": "Lobster",
+    "chinese_name": "龙虾",
+    "wiki_title": "Lobster",
+    "worms_name": "Nephropidae",
+    "scientific_name": "Nephropidae / Palinuridae",
+    "taxonomic_group": "Arthropoda / Crustacea",
+    "keywords": [
+      "lobster",
+      "龙虾",
+      "长触角",
+      "分节腹部",
+      "甲壳类",
+      "洞穴"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Lobster",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Nephropidae"
+    }
+  },
+  {
+    "species_id": "clownfish",
+    "english_name": "Clownfish",
+    "chinese_name": "小丑鱼",
+    "wiki_title": "Amphiprioninae",
+    "worms_name": "Amphiprioninae",
+    "scientific_name": "Amphiprioninae",
+    "taxonomic_group": "Chordata / Actinopterygii / Pomacentridae",
+    "keywords": [
+      "clownfish",
+      "小丑鱼",
+      "白色横带",
+      "海葵",
+      "珊瑚礁",
+      "共生"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Amphiprioninae",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Amphiprioninae"
+    }
+  },
+  {
+    "species_id": "seahorse",
+    "english_name": "Seahorse",
+    "chinese_name": "海马",
+    "wiki_title": "Seahorse",
+    "worms_name": "Hippocampus",
+    "scientific_name": "Hippocampus",
+    "taxonomic_group": "Chordata / Actinopterygii / Syngnathidae",
+    "keywords": [
+      "seahorse",
+      "海马",
+      "马头状",
+      "卷尾",
+      "直立姿态",
+      "海草床"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Seahorse",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Hippocampus"
+    }
+  },
+  {
+    "species_id": "stingray",
+    "english_name": "Stingray",
+    "chinese_name": "魟鱼",
+    "wiki_title": "Stingray",
+    "worms_name": "Myliobatiformes",
+    "scientific_name": "Myliobatiformes",
+    "taxonomic_group": "Chordata / Chondrichthyes",
+    "keywords": [
+      "stingray",
+      "魟鱼",
+      "扁平身体",
+      "宽胸鳍",
+      "细长尾",
+      "沙地"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Stingray",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Myliobatiformes"
+    }
+  },
+  {
+    "species_id": "shark",
+    "english_name": "Shark",
+    "chinese_name": "鲨鱼",
+    "wiki_title": "Shark",
+    "worms_name": "Selachimorpha",
+    "scientific_name": "Selachimorpha",
+    "taxonomic_group": "Chordata / Chondrichthyes",
+    "keywords": [
+      "shark",
+      "鲨鱼",
+      "流线型",
+      "背鳍",
+      "尾鳍",
+      "软骨鱼"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Shark",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Selachimorpha"
+    }
+  },
+  {
+    "species_id": "sea_turtle",
+    "english_name": "Sea turtle",
+    "chinese_name": "海龟",
+    "wiki_title": "Sea_turtle",
+    "worms_name": "Chelonioidea",
+    "scientific_name": "Chelonioidea",
+    "taxonomic_group": "Chordata / Reptilia / Testudines",
+    "keywords": [
+      "sea turtle",
+      "海龟",
+      "背甲",
+      "鳍肢",
+      "迁徙",
+      "海草床"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Sea_turtle",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Chelonioidea"
+    }
+  },
+  {
+    "species_id": "coral",
+    "english_name": "Coral",
+    "chinese_name": "珊瑚",
+    "wiki_title": "Coral",
+    "worms_name": "Anthozoa",
+    "scientific_name": "Anthozoa / Scleractinia",
+    "taxonomic_group": "Cnidaria / Anthozoa",
+    "keywords": [
+      "coral",
+      "珊瑚",
+      "珊瑚礁",
+      "分枝状",
+      "块状",
+      "刺胞动物"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Coral",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Anthozoa"
+    }
+  },
+  {
+    "species_id": "sea_anemone",
+    "english_name": "Sea anemone",
+    "chinese_name": "海葵",
+    "wiki_title": "Sea_anemone",
+    "worms_name": "Actiniaria",
+    "scientific_name": "Actiniaria",
+    "taxonomic_group": "Cnidaria / Anthozoa / Actiniaria",
+    "keywords": [
+      "sea anemone",
+      "海葵",
+      "触手",
+      "口盘",
+      "刺胞动物",
+      "小丑鱼"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Sea_anemone",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Actiniaria"
+    }
+  },
+  {
+    "species_id": "manta_ray",
+    "english_name": "Manta ray",
+    "chinese_name": "蝠鲼",
+    "wiki_title": "Manta_ray",
+    "worms_name": "Mobula",
+    "scientific_name": "Mobula / Manta",
+    "taxonomic_group": "Chordata / Chondrichthyes / Mobulidae",
+    "keywords": [
+      "manta ray",
+      "蝠鲼",
+      "翼状胸鳍",
+      "滤食",
+      "头鳍",
+      "开放水体"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Manta_ray",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Mobula"
+    }
+  },
+  {
+    "species_id": "eel",
+    "english_name": "Eel",
+    "chinese_name": "鳗鱼",
+    "wiki_title": "Eel",
+    "worms_name": "Anguilliformes",
+    "scientific_name": "Anguilliformes",
+    "taxonomic_group": "Chordata / Actinopterygii / Anguilliformes",
+    "keywords": [
+      "eel",
+      "鳗鱼",
+      "蛇形身体",
+      "洞穴",
+      "波浪游动",
+      "细长"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Eel",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Anguilliformes"
+    }
+  },
+  {
+    "species_id": "dolphin",
+    "english_name": "Dolphin",
+    "chinese_name": "海豚",
+    "wiki_title": "Dolphin",
+    "worms_name": "Delphinidae",
+    "scientific_name": "Delphinidae",
+    "taxonomic_group": "Chordata / Mammalia / Cetacea",
+    "keywords": [
+      "dolphin",
+      "海豚",
+      "海洋哺乳动物",
+      "背鳍",
+      "水平尾鳍",
+      "流线型"
+    ],
+    "source_urls": {
+      "wikipedia": "https://en.wikipedia.org/wiki/Dolphin",
+      "worms": "https://www.marinespecies.org/rest/AphiaRecordsByName/Delphinidae"
+    }
+  }
+]

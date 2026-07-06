@@ -1,0 +1,15 @@
+{
+  "book_id": "sa_invertebrates",
+  "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+  "units_processed": 409,
+  "images_extracted": 1091,
+  "unique_binaries": 1090,
+  "duplicate_bindings": 1,
+  "entity_bindings": 1091,
+  "rag_documents": 1091,
+  "relations": 3273,
+  "failures": 0,
+  "image_dir": "F:\\rag\\AquaBio-AgentRAG\\data\\mrag\\raganything\\extracted_assets\\sa_invertebrates\\images",
+  "index_dir": "F:\\rag\\AquaBio-AgentRAG\\data\\mrag\\raganything\\extracted_assets\\sa_invertebrates\\image_index",
+  "caption_method": "entity_page_context"
+}

@@ -1,0 +1,20 @@
+{
+  "llm": {
+    "provider": "openrouter",
+    "model_name_env": "OPENROUTER_MODEL"
+  },
+  "vlm": {
+    "provider": "openrouter",
+    "model_name_env": "OPENROUTER_MODEL"
+  },
+  "embedding": {
+    "provider": "sentence_transformers",
+    "model_name": "BAAI/bge-m3",
+    "normalize_embeddings": true,
+    "batch_size": 16
+  },
+  "clip": {
+    "enabled": false
+  }
+}
+

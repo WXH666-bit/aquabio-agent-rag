@@ -1,0 +1,16 @@
+[
+  {
+    "image_id": "network_8b873a999627",
+    "image_path": "data/mrag/network_images/f8e61b29b82caaae/8b873a999627108e.jpg",
+    "image_url": "/files/data/mrag/network_images/f8e61b29b82caaae/8b873a999627108e.jpg",
+    "caption": "File:Hawaii turtle 2.JPG",
+    "scientific_name": "Chelonia mydas",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "specimen",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Hawaii_turtle_2.JPG",
+    "license": "CC BY-SA 3.0"
+  }
+]

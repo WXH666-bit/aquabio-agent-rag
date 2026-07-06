@@ -1,0 +1,129 @@
+return_code=0
+STDOUT
+Start MinerU FastAPI Service: http://127.0.0.1:61372
+API documentation: http://127.0.0.1:61372/docs
+
+STDERR
+2026-06-10 19:04:29.498 | INFO     | mineru.cli.client:run_orchestrated_cli:905 - Started local mineru-api at http://127.0.0.1:61372
+2026-06-10 19:04:34.589 | INFO     | __main__:create_app:234 - Request concurrency limited to 3
+INFO:     Started server process [26236]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:61372 (Press CTRL+C to quit)
+2026-06-10 19:04:34.900 | INFO     | mineru.cli.client:run_planned_task:785 - Submitting batch 1/1 | 1 document, 4 pages in this batch | 4 pages total | task#1 [sa_invertebrates_p0429_0432]
+2026-06-10 19:04:42.240 | INFO     | mineru.backend.pipeline.pipeline_analyze:doc_analyze_streaming:209 - Pipeline processing-window multi-file run. doc_count=1, total_pages=4, window_size=64, total_batches=1
+2026-06-10 19:04:48.704 | INFO     | mineru.backend.pipeline.pipeline_analyze:doc_analyze_streaming:264 - Pipeline processing window batch 1/1: 4/4 pages, batch_pages=4, doc_slices=doc0:1-4
+2026-06-10 19:04:48.707 | INFO     | mineru.backend.pipeline.pipeline_analyze:batch_image_analyze:364 - GPU Memory: 1 GB, Batch Ratio: 1. 
+2026-06-10 19:04:48.707 | INFO     | mineru.backend.pipeline.model_init:__init__:252 - DocAnalysis init, this may take some times......
+
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]
+Fetching 7 files: 100%|��������������������| 7/7 [00:00<?, ?it/s]
+
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]
+Fetching 3 files: 100%|��������������������| 3/3 [00:00<?, ?it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 1908.24it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 1000.07it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 924.26it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 2579.52it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 2169.84it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 835.52it/s]
+2026-06-10 19:04:58.629 | INFO     | mineru.backend.pipeline.model_init:__init__:304 - DocAnalysis init done!
+2026-06-10 19:04:58.629 | INFO     | mineru.backend.pipeline.pipeline_analyze:custom_model_init:83 - model init cost: 9.922406435012817
+
+Layout Predict:   0%|          | 0/4 [00:00<?, ?it/s]
+Layout Predict:  25%|������       | 1/4 [00:01<00:05,  1.85s/it]
+Layout Predict:  50%|����������     | 2/4 [00:03<00:03,  1.78s/it]
+Layout Predict:  75%|����������������  | 3/4 [00:05<00:01,  1.77s/it]
+Layout Predict: 100%|��������������������| 4/4 [00:07<00:00,  1.75s/it]
+Layout Predict: 100%|��������������������| 4/4 [00:07<00:00,  1.77s/it]
+
+Table-ocr det:   0%|          | 0/4 [00:00<?, ?it/s]
+Table-ocr det:  25%|������       | 1/4 [00:00<00:00,  6.77it/s]
+Table-ocr det:  50%|����������     | 2/4 [00:00<00:00,  7.93it/s]
+Table-ocr det:  75%|����������������  | 3/4 [00:00<00:00,  6.88it/s]
+Table-ocr det: 100%|��������������������| 4/4 [00:00<00:00,  7.31it/s]
+Table-ocr det: 100%|��������������������| 4/4 [00:00<00:00,  7.27it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 991.09it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+Table-ocr rec en:   0%|          | 0/57 [00:00<?, ?it/s]
+Table-ocr rec en:  11%|��         | 6/57 [00:00<00:05,  8.89it/s]
+Table-ocr rec en:  21%|����        | 12/57 [00:01<00:04,  9.13it/s]
+Table-ocr rec en:  32%|��������      | 18/57 [00:01<00:04,  9.30it/s]
+Table-ocr rec en:  42%|����������     | 24/57 [00:02<00:03,  9.41it/s]
+Table-ocr rec en:  53%|������������    | 30/57 [00:03<00:02,  9.53it/s]
+Table-ocr rec en:  63%|��������������   | 36/57 [00:03<00:02,  9.63it/s]
+Table-ocr rec en:  74%|����������������  | 42/57 [00:04<00:01,  9.65it/s]
+Table-ocr rec en:  84%|������������������ | 48/57 [00:05<00:00,  9.53it/s]
+Table-ocr rec en:  95%|��������������������| 54/57 [00:05<00:00,  9.34it/s]
+Table-ocr rec en: 100%|��������������������| 57/57 [00:06<00:00,  8.83it/s]
+Table-ocr rec en: 100%|��������������������| 57/57 [00:06<00:00,  9.25it/s]
+
+Table-wireless Predict:   0%|          | 0/4 [00:00<?, ?it/s]
+Table-wireless Predict: 100%|��������������������| 4/4 [00:00<00:00,  5.35it/s]
+Table-wireless Predict: 100%|��������������������| 4/4 [00:00<00:00,  5.35it/s]
+
+Table-wired Predict:   0%|          | 0/4 [00:00<?, ?it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s][A
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+Table-wired Predict:  25%|������       | 1/4 [00:01<00:03,  1.15s/it]
+Table-wired Predict:  50%|����������     | 2/4 [00:01<00:01,  1.06it/s]
+Table-wired Predict:  75%|����������������  | 3/4 [00:02<00:00,  1.08it/s]
+Table-wired Predict: 100%|��������������������| 4/4 [00:03<00:00,  1.14it/s]
+Table-wired Predict: 100%|��������������������| 4/4 [00:03<00:00,  1.09it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<00:00, 1003.42it/s]
+
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+Fetching 1 files: 100%|��������������������| 1/1 [00:00<?, ?it/s]
+
+OCR-det en:   0%|          | 0/13 [00:00<?, ?it/s]
+OCR-det en:   8%|��         | 1/13 [00:00<00:03,  3.08it/s]
+OCR-det en:  15%|����        | 2/13 [00:00<00:02,  4.22it/s]
+OCR-det en:  23%|������       | 3/13 [00:01<00:04,  2.23it/s]
+OCR-det en:  31%|������       | 4/13 [00:01<00:03,  2.82it/s]
+OCR-det en:  38%|��������      | 5/13 [00:01<00:02,  3.59it/s]
+OCR-det en:  46%|����������     | 6/13 [00:01<00:02,  3.32it/s]
+OCR-det en:  54%|������������    | 7/13 [00:02<00:01,  3.90it/s]
+OCR-det en:  62%|��������������   | 8/13 [00:02<00:01,  4.52it/s]
+OCR-det en:  77%|����������������  | 10/13 [00:02<00:00,  4.97it/s]
+OCR-det en:  85%|������������������ | 11/13 [00:02<00:00,  5.51it/s]
+OCR-det en:  92%|��������������������| 12/13 [00:02<00:00,  5.90it/s]
+OCR-det en: 100%|��������������������| 13/13 [00:02<00:00,  4.54it/s]
+
+Seal Predict: 0it [00:00, ?it/s]
+Seal Predict: 0it [00:00, ?it/s]
+
+Processing pages:   0%|          | 0/4 [00:00<?, ?it/s]
+Processing pages:  25%|������       | 1/4 [00:00<00:00,  8.98it/s]
+Processing pages:  75%|����������������  | 3/4 [00:00<00:00, 10.76it/s]
+Processing pages: 100%|��������������������| 4/4 [00:00<00:00,  9.48it/s]
+2026-06-10 19:05:25.499 | INFO     | mineru.cli.client:run_planned_task:836 - Completed batch 1/1 | Processed 4/4 pages | 1 of 1 batch finished | task#1 [sa_invertebrates_p0429_0432]

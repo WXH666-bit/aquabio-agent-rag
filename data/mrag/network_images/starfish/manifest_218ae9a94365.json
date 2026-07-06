@@ -1,0 +1,17 @@
+[
+  {
+    "image_id": "network_28db34374b7b",
+    "image_path": "data/mrag/network_images/starfish/28db34374b7bfb1e.png",
+    "image_url": "/files/data/mrag/network_images/starfish/28db34374b7bfb1e.png",
+    "caption": "File:Parvalustra exigua distribution map.svg",
+    "scientific_name": "Starfish",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "distribution_map",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Parvalustra_exigua_distribution_map.svg",
+    "license": "Public domain",
+    "map_verified": true
+  }
+]

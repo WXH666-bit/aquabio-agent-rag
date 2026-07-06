@@ -1,0 +1,16 @@
+[
+  {
+    "image_id": "network_aa6b3e620425",
+    "image_path": "data/mrag/network_images/674a920d9df2bfe9/aa6b3e620425610e.jpg",
+    "image_url": "/files/data/mrag/network_images/674a920d9df2bfe9/aa6b3e620425610e.jpg",
+    "caption": "File:Sea-otter-morro-bay 13.jpg",
+    "scientific_name": "Sea otter",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "specimen",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Sea-otter-morro-bay_13.jpg",
+    "license": "CC BY 2.0"
+  }
+]

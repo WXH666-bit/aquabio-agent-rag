@@ -1,0 +1,25 @@
+{
+  "book_id": "sa_invertebrates",
+  "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+  "pdf_pages": 501,
+  "catalog_rows": 409,
+  "species_page_units": 409,
+  "catalog_page_matches": 409,
+  "chunks": 3871,
+  "relations": 6241,
+  "image_records": 1091,
+  "units_with_warnings": 1,
+  "phyla": {
+    "Porifera": 24,
+    "Cnidaria": 47,
+    "Sipuncula": 1,
+    "Annelida": 9,
+    "Arthropoda": 90,
+    "Bryozoa": 15,
+    "Brachiopoda": 2,
+    "Mollusca": 131,
+    "Echinodermata": 79,
+    "Chordata": 10,
+    "Hemichordata": 1
+  }
+}

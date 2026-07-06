@@ -1,0 +1,17 @@
+[
+  {
+    "image_id": "network_580ff117d0a3",
+    "image_path": "data/mrag/network_images/shrimp/580ff117d0a348d5.jpg",
+    "image_url": "/files/data/mrag/network_images/shrimp/580ff117d0a348d5.jpg",
+    "caption": "File:2 servings of cocktail shrimp with dipping sauce.JPG",
+    "scientific_name": "Shrimp",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "specimen",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:2_servings_of_cocktail_shrimp_with_dipping_sauce.JPG",
+    "license": "CC BY-SA 3.0",
+    "map_verified": false
+  }
+]

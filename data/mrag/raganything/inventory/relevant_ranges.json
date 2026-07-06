@@ -1,0 +1,689 @@
+[
+  {
+    "segment_id": "living_guide_p0008_0010",
+    "doc_id": "doc_living_guide_p0008_0010",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 8,
+    "end_page": 10,
+    "matched_species": [
+      "scallop"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0012_0019",
+    "doc_id": "doc_living_guide_p0012_0019",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 12,
+    "end_page": 19,
+    "matched_species": [
+      "coral",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0021_0060",
+    "doc_id": "doc_living_guide_p0021_0060",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 21,
+    "end_page": 60,
+    "matched_species": [
+      "coral",
+      "crab",
+      "lobster",
+      "manta_ray",
+      "octopus",
+      "scallop",
+      "sea_cucumber",
+      "shark",
+      "shrimp",
+      "squid",
+      "stingray"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0060_0090",
+    "doc_id": "doc_living_guide_p0060_0090",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 60,
+    "end_page": 90,
+    "matched_species": [
+      "coral",
+      "crab",
+      "lobster",
+      "manta_ray",
+      "octopus",
+      "scallop",
+      "sea_cucumber",
+      "shark",
+      "shrimp",
+      "squid",
+      "stingray"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0093_0098",
+    "doc_id": "doc_living_guide_p0093_0098",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 93,
+    "end_page": 98,
+    "matched_species": [
+      "coral",
+      "eel"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0108_0112",
+    "doc_id": "doc_living_guide_p0108_0112",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 108,
+    "end_page": 112,
+    "matched_species": [
+      "coral",
+      "seahorse"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0125_0127",
+    "doc_id": "doc_living_guide_p0125_0127",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 125,
+    "end_page": 127,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0133_0141",
+    "doc_id": "doc_living_guide_p0133_0141",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 133,
+    "end_page": 141,
+    "matched_species": [
+      "coral",
+      "eel",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0149_0156",
+    "doc_id": "doc_living_guide_p0149_0156",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 149,
+    "end_page": 156,
+    "matched_species": [
+      "coral",
+      "eel"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0158_0160",
+    "doc_id": "doc_living_guide_p0158_0160",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 158,
+    "end_page": 160,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0162_0201",
+    "doc_id": "doc_living_guide_p0162_0201",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 162,
+    "end_page": 201,
+    "matched_species": [
+      "coral",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0204_0206",
+    "doc_id": "doc_living_guide_p0204_0206",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 204,
+    "end_page": 206,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0213_0215",
+    "doc_id": "doc_living_guide_p0213_0215",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 213,
+    "end_page": 215,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0217_0234",
+    "doc_id": "doc_living_guide_p0217_0234",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 217,
+    "end_page": 234,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0236_0255",
+    "doc_id": "doc_living_guide_p0236_0255",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 236,
+    "end_page": 255,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0257_0287",
+    "doc_id": "doc_living_guide_p0257_0287",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 257,
+    "end_page": 287,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0289_0301",
+    "doc_id": "doc_living_guide_p0289_0301",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 289,
+    "end_page": 301,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0306_0308",
+    "doc_id": "doc_living_guide_p0306_0308",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 306,
+    "end_page": 308,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0318_0321",
+    "doc_id": "doc_living_guide_p0318_0321",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 318,
+    "end_page": 321,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0324_0332",
+    "doc_id": "doc_living_guide_p0324_0332",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 324,
+    "end_page": 332,
+    "matched_species": [
+      "coral",
+      "sea_turtle"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0334_0350",
+    "doc_id": "doc_living_guide_p0334_0350",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 334,
+    "end_page": 350,
+    "matched_species": [
+      "coral",
+      "crab",
+      "eel",
+      "lobster",
+      "sea_turtle",
+      "seahorse",
+      "shark",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "living_guide_p0352_0367",
+    "doc_id": "doc_living_guide_p0352_0367",
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "start_page": 352,
+    "end_page": 367,
+    "matched_species": [
+      "eel",
+      "lobster",
+      "manta_ray",
+      "octopus",
+      "scallop",
+      "shark",
+      "shrimp",
+      "squid"
+    ],
+    "scope": "relevant",
+    "source_sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0003_0005",
+    "doc_id": "doc_sa_invertebrates_p0003_0005",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 3,
+    "end_page": 5,
+    "matched_species": [
+      "coral",
+      "jellyfish",
+      "octopus",
+      "sea_cucumber",
+      "sea_urchin",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0011_0025",
+    "doc_id": "doc_sa_invertebrates_p0011_0025",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 11,
+    "end_page": 25,
+    "matched_species": [
+      "coral",
+      "crab",
+      "jellyfish",
+      "lobster",
+      "octopus",
+      "sea_cucumber",
+      "sea_urchin",
+      "shrimp",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0027_0039",
+    "doc_id": "doc_sa_invertebrates_p0027_0039",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 27,
+    "end_page": 39,
+    "matched_species": [
+      "coral",
+      "crab",
+      "jellyfish",
+      "lobster",
+      "octopus",
+      "scallop",
+      "sea_anemone",
+      "sea_cucumber",
+      "sea_urchin",
+      "shrimp",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0058_0060",
+    "doc_id": "doc_sa_invertebrates_p0058_0060",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 58,
+    "end_page": 60,
+    "matched_species": [
+      "crab"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0068_0107",
+    "doc_id": "doc_sa_invertebrates_p0068_0107",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 68,
+    "end_page": 107,
+    "matched_species": [
+      "coral",
+      "jellyfish",
+      "sea_anemone"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0107_0120",
+    "doc_id": "doc_sa_invertebrates_p0107_0120",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 107,
+    "end_page": 120,
+    "matched_species": [
+      "coral",
+      "jellyfish",
+      "sea_anemone"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0122_0124",
+    "doc_id": "doc_sa_invertebrates_p0122_0124",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 122,
+    "end_page": 124,
+    "matched_species": [
+      "crab"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0132_0134",
+    "doc_id": "doc_sa_invertebrates_p0132_0134",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 132,
+    "end_page": 134,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0138_0141",
+    "doc_id": "doc_sa_invertebrates_p0138_0141",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 138,
+    "end_page": 141,
+    "matched_species": [
+      "crab"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0143_0146",
+    "doc_id": "doc_sa_invertebrates_p0143_0146",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 143,
+    "end_page": 146,
+    "matched_species": [
+      "crab",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0148_0187",
+    "doc_id": "doc_sa_invertebrates_p0148_0187",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 148,
+    "end_page": 187,
+    "matched_species": [
+      "coral",
+      "crab",
+      "lobster",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0187_0226",
+    "doc_id": "doc_sa_invertebrates_p0187_0226",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 187,
+    "end_page": 226,
+    "matched_species": [
+      "coral",
+      "crab",
+      "lobster",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0226_0232",
+    "doc_id": "doc_sa_invertebrates_p0226_0232",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 226,
+    "end_page": 232,
+    "matched_species": [
+      "coral",
+      "crab",
+      "lobster",
+      "shrimp"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0240_0243",
+    "doc_id": "doc_sa_invertebrates_p0240_0243",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 240,
+    "end_page": 243,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0245_0247",
+    "doc_id": "doc_sa_invertebrates_p0245_0247",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 245,
+    "end_page": 247,
+    "matched_species": [
+      "coral"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0316_0319",
+    "doc_id": "doc_sa_invertebrates_p0316_0319",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 316,
+    "end_page": 319,
+    "matched_species": [
+      "scallop"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0324_0339",
+    "doc_id": "doc_sa_invertebrates_p0324_0339",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 324,
+    "end_page": 339,
+    "matched_species": [
+      "octopus",
+      "squid"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0351_0390",
+    "doc_id": "doc_sa_invertebrates_p0351_0390",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 351,
+    "end_page": 390,
+    "matched_species": [
+      "coral",
+      "octopus",
+      "sea_cucumber",
+      "sea_urchin",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0390_0429",
+    "doc_id": "doc_sa_invertebrates_p0390_0429",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 390,
+    "end_page": 429,
+    "matched_species": [
+      "coral",
+      "octopus",
+      "sea_cucumber",
+      "sea_urchin",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0429_0432",
+    "doc_id": "doc_sa_invertebrates_p0429_0432",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 429,
+    "end_page": 432,
+    "matched_species": [
+      "coral",
+      "octopus",
+      "sea_cucumber",
+      "sea_urchin",
+      "squid",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0435_0454",
+    "doc_id": "doc_sa_invertebrates_p0435_0454",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 435,
+    "end_page": 454,
+    "matched_species": [
+      "sea_urchin",
+      "starfish"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0470_0483",
+    "doc_id": "doc_sa_invertebrates_p0470_0483",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 470,
+    "end_page": 483,
+    "matched_species": [
+      "coral",
+      "sea_cucumber"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  },
+  {
+    "segment_id": "sa_invertebrates_p0497_0501",
+    "doc_id": "doc_sa_invertebrates_p0497_0501",
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "start_page": 497,
+    "end_page": 501,
+    "matched_species": [
+      "coral",
+      "octopus",
+      "sea_urchin"
+    ],
+    "scope": "relevant",
+    "source_sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  }
+]

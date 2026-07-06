@@ -1,0 +1,16 @@
+[
+  {
+    "image_id": "network_2b3c768fbf32",
+    "image_path": "data/mrag/network_images/f8e61b29b82caaae/2b3c768fbf32a6cd.png",
+    "image_url": "/files/data/mrag/network_images/f8e61b29b82caaae/2b3c768fbf32a6cd.png",
+    "caption": "File:Lieux pontes tortue verte.png",
+    "scientific_name": "Chelonia mydas",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "distribution_map",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lieux_pontes_tortue_verte.png",
+    "license": "CC BY-SA 3.0"
+  }
+]

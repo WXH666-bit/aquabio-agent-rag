@@ -1,0 +1,6 @@
+{"id":"species_starfish","source_type":"species_card","class_name":"starfish","chinese_name":"海星","content":"海星是棘皮动物，常见视觉特征是中央盘和多条放射状腕。低对比度、遮挡或与珊瑚岩石颜色接近时容易漏检。","visual_features":["中央盘","放射状腕","星形轮廓"],"keywords":["starfish","sea star","海星"]}
+{"id":"species_echinus","source_type":"species_card","class_name":"echinus","chinese_name":"海胆","content":"海胆通常具有近圆形身体和密集棘刺，在暗光水下图像中可能表现为深色圆形区域，并与石块混淆。","visual_features":["圆形身体","棘刺","深色轮廓"],"keywords":["echinus","sea urchin","海胆"]}
+{"id":"species_holothurian","source_type":"species_card","class_name":"holothurian","chinese_name":"海参","content":"海参通常呈细长或圆柱状，贴近海底生活。浑浊、阴影和海底纹理会降低其边界清晰度。","visual_features":["细长身体","圆柱状","贴近海底"],"keywords":["holothurian","sea cucumber","海参"]}
+{"id":"species_scallop","source_type":"species_card","class_name":"scallop","chinese_name":"扇贝","content":"扇贝具有扇形或近圆形贝壳和放射状壳纹。埋沙、附着物和低分辨率会造成识别困难。","visual_features":["扇形贝壳","放射状壳纹"],"keywords":["scallop","扇贝"]}
+{"id":"species_jellyfish","source_type":"species_card","class_name":"jellyfish","chinese_name":"水母","content":"水母常有半透明伞状体和触手。透明度、运动模糊和复杂水体背景会降低检测稳定性。","visual_features":["半透明伞状体","触手"],"keywords":["jellyfish","水母"]}
+

@@ -1,0 +1,14 @@
+{
+  "store_type": "local_tfidf_sparse_vector_store",
+  "created_at": "2026-06-09T16:51:05.108877+00:00",
+  "record_count": 99,
+  "vector_count": 99,
+  "dimension": 18545,
+  "source_counts": {
+    "dataset_card": 3,
+    "species_card": 5,
+    "pdf_chunk": 91
+  },
+  "knowledge_dir": "data\\knowledge",
+  "index_dir": "data\\index"
+}

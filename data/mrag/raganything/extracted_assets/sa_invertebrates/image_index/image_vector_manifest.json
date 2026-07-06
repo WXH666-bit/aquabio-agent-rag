@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-11T16:24:18.046598+00:00",
+  "collection_name": "aquabio_pdf_images",
+  "embedding_model": "BAAI/bge-m3",
+  "book_id": "sa_invertebrates",
+  "document_file": "F:\\rag\\AquaBio-AgentRAG\\data\\mrag\\raganything\\extracted_assets\\sa_invertebrates\\image_index\\pdf_image_rag_docs.jsonl",
+  "document_count": 1091,
+  "existing_before_run": 448,
+  "indexed_this_run": 643,
+  "collection_count": 1091
+}

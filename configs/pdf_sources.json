@@ -1,0 +1,58 @@
+[
+  {
+    "doc_id": "pdf_fao_wca_volume1",
+    "title": "The Living Marine Resources of the Western Central Atlantic, Volume 1",
+    "source_org": "FAO",
+    "doc_type": "species_identification_guide",
+    "language": "English",
+    "local_path": "data/mrag/pdfs/fao_wca_volume1.pdf",
+    "source_url": "https://www.fao.org/4/y4160e/y4160e00.pdf",
+    "usage": ["species_description", "taxonomy", "diagnostic_characters", "distribution"],
+    "priority": 1
+  },
+  {
+    "doc_id": "pdf_noaa_coral_reef_lesson",
+    "title": "Modeling Coral Reef Ecosystems",
+    "source_org": "NOAA National Marine Sanctuaries",
+    "doc_type": "education_material",
+    "language": "English",
+    "local_path": "data/mrag/pdfs/noaa_coral_reef_lesson.pdf",
+    "source_url": "https://nmssanctuaries.blob.core.windows.net/sanctuaries-prod/media/docs/20231129-coral-reef-lesson-plan.pdf",
+    "usage": ["coral_reef_ecosystem", "food_web", "education", "conservation"],
+    "priority": 2
+  },
+  {
+    "doc_id": "pdf_iucn_coral_reefs",
+    "title": "Coral Reefs",
+    "source_org": "IUCN",
+    "doc_type": "conservation_report",
+    "language": "English",
+    "local_path": "data/mrag/pdfs/iucn_coral_reefs.pdf",
+    "source_url": "https://portals.iucn.org/library/sites/library/files/documents/CES-001.pdf",
+    "usage": ["coral_reef_ecosystem", "biodiversity", "conservation"],
+    "priority": 2
+  },
+  {
+    "doc_id": "pdf_uieb_research",
+    "title": "An Underwater Image Enhancement Benchmark Dataset and Beyond",
+    "source_org": "IEEE authors / arXiv",
+    "doc_type": "research_paper",
+    "language": "English",
+    "local_path": "data/pdfs/UIEB_paper.pdf",
+    "source_url": "https://arxiv.org/pdf/1901.05495",
+    "usage": ["underwater_imaging", "image_quality", "color_cast"],
+    "priority": 3
+  },
+  {
+    "doc_id": "pdf_duo_research",
+    "title": "A Dataset and Benchmark of Underwater Object Detection for Robot Picking",
+    "source_org": "Dalian University of Technology / arXiv",
+    "doc_type": "research_paper",
+    "language": "English",
+    "local_path": "data/pdfs/DUO_paper.pdf",
+    "source_url": "https://arxiv.org/pdf/2106.05681",
+    "usage": ["underwater_dataset", "species_classes", "robot_picking"],
+    "priority": 3
+  }
+]
+

@@ -1,0 +1,17 @@
+{
+  "species_count": 20,
+  "species_cards": 20,
+  "text_chunks": 160,
+  "rag_documents": 180,
+  "chunk_types": [
+    "overview",
+    "taxonomy",
+    "visual_features",
+    "habitat",
+    "ecology_behavior",
+    "similar_species",
+    "image_recognition_tips",
+    "rag_usage"
+  ],
+  "note": "This is a long-text seed database. It is curated/generated with source URLs for later verification/crawling, not a verbatim web crawl."
+}

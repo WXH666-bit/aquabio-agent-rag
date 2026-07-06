@@ -1,0 +1,17 @@
+[
+  {
+    "image_id": "network_04e637b83f2c",
+    "image_path": "data/mrag/network_images/shark/04e637b83f2ca04f.png",
+    "image_url": "/files/data/mrag/network_images/shark/04e637b83f2ca04f.png",
+    "caption": "File:Great White Shark Distibution map.png",
+    "scientific_name": "Shark",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "distribution_map",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Great_White_Shark_Distibution_map.png",
+    "license": "CC BY-SA 3.0",
+    "map_verified": true
+  }
+]

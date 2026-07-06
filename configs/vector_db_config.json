@@ -1,0 +1,13 @@
+{
+  "vector_db": {
+    "type": "chroma",
+    "persist_dir": "data/mrag/vector_db/chroma",
+    "collection_name": "aquabio_mrag"
+  },
+  "retrieval": {
+    "top_k": 12,
+    "rerank_top_k": 6,
+    "use_metadata_filter": true
+  }
+}
+

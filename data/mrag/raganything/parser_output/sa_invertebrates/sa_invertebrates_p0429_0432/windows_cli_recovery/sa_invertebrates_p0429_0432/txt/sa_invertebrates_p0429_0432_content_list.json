@@ -1,0 +1,921 @@
+[
+    {
+        "type": "table",
+        "img_path": "images/bc6529f0695c20bdffa198a972c385768b8bd607c593bb4d3ec1a13cb2f8c2f8.jpg",
+        "table_caption": [
+            "Luidia sarsii africana (LucAfr)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Phylum:</td><td rowspan=1 colspan=1>Echinodermata</td></tr><tr><td rowspan=1 colspan=1>Class:</td><td rowspan=1 colspan=1>Asteroidea</td></tr><tr><td rowspan=1 colspan=1>Order:</td><td rowspan=1 colspan=1>Paxillosida</td></tr><tr><td rowspan=1 colspan=1>Family:</td><td rowspan=1 colspan=1>Luidiidae</td></tr><tr><td rowspan=1 colspan=1>Genus:</td><td rowspan=1 colspan=1>Luidia</td></tr><tr><td rowspan=1 colspan=1>Species:</td><td rowspan=1 colspan=1>sarsii africana</td></tr><tr><td rowspan=1 colspan=1>Common name:</td><td rowspan=1 colspan=1>Legs break easily starfish</td></tr></table>",
+        "bbox": [
+            163,
+            142,
+            571,
+            298
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d84d57dbdd3af85431a46de746f3ac428b3f8f4d9c7c3049faa390bb6a88ff4e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            589,
+            114,
+            836,
+            279
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/adae5a76c0370cf837ebd40193310dd4d9121d0d370a199ddb4cdcfbea0760b9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            163,
+            322,
+            489,
+            551
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/3c67fa96e4336accc0d8c28aae35a2a853b10ef291160eaa9f0bab00d6dc2672.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            509,
+            322,
+            833,
+            551
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "distinguishing features",
+        "text_level": 2,
+        "bbox": [
+            161,
+            575,
+            322,
+            592
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Arms usually break off central disc very easily.   \nDistinct spines protrude from aboral margin edge;   \narms long, flexible, flattened and tapering, strap-like.   \nUsually five arms.",
+        "bbox": [
+            161,
+            592,
+            489,
+            650
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Colour",
+        "text_level": 2,
+        "bbox": [
+            163,
+            663,
+            211,
+            677
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Brown to dark pink.",
+        "bbox": [
+            161,
+            678,
+            290,
+            693
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Size",
+        "text_level": 2,
+        "bbox": [
+            163,
+            706,
+            194,
+            721
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Average up to 150 mm diameter, but can get larger individuals.",
+        "bbox": [
+            161,
+            722,
+            487,
+            751
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "distribution",
+        "text_level": 2,
+        "bbox": [
+            163,
+            764,
+            247,
+            780
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Southern African endemic. West and South Coasts of South Africa, to Port Elizabeth; 54 m to 360+ m depth.",
+        "bbox": [
+            161,
+            781,
+            489,
+            825
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Similar species",
+        "text_level": 2,
+        "bbox": [
+            509,
+            575,
+            615,
+            592
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Astropecten polyacanthus and Astropecten exilis, however arms of Luidia africana are more flattened and broader, i.e. less tapered, and break off central disc easily.",
+        "bbox": [
+            507,
+            592,
+            836,
+            650
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "references",
+        "text_level": 2,
+        "bbox": [
+            509,
+            663,
+            589,
+            677
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Downey ME. 1992. Starfishes of the Atlantic (Volume 3). Chapman and Hall: London. p. 20. (794pp.).",
+        "bbox": [
+            509,
+            677,
+            836,
+            722
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Phylum: Echinodermata",
+        "bbox": [
+            163,
+            53,
+            302,
+            67
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "426",
+        "bbox": [
+            57,
+            957,
+            85,
+            969
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/07f50a83c137a6d620e0bff880b214f4988b9805fa1932bc0f9a4aff955c0b52.jpg",
+        "table_caption": [
+            "Chondraster elattosis (ChoEla)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Phylum:</td><td rowspan=1 colspan=1>Echinodermata</td></tr><tr><td rowspan=1 colspan=1>Class:</td><td rowspan=1 colspan=1>Asteroidea</td></tr><tr><td rowspan=1 colspan=1>Order:</td><td rowspan=1 colspan=1>Valvatida</td></tr><tr><td rowspan=1 colspan=1>Family:</td><td rowspan=1 colspan=1>Poraniidae</td></tr><tr><td rowspan=1 colspan=1>Genus:</td><td rowspan=1 colspan=1>Chondraster</td></tr><tr><td rowspan=1 colspan=1>Species:</td><td rowspan=1 colspan=1>elattosis</td></tr><tr><td rowspan=1 colspan=1>Common name:</td><td rowspan=1 colspan=1>Pentagon star</td></tr></table>",
+        "bbox": [
+            163,
+            146,
+            571,
+            299
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a4ab2f5667ee715741ed59ebdc7a1e565f094b98bc692f199f869af919d095ac.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            589,
+            114,
+            836,
+            279
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/51fcea3c5cdfa38f0626fbcf0289c22470c6f27f996a76ee5be9b003b7e5a90a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            163,
+            323,
+            379,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce4f6c76e430f719134899606d5ce7546ca9b0eed312758e3312d7133969e480.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            393,
+            323,
+            606,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/7c1b1883e584bb2ac456ace483fbb53c535f7f494b863c6264c53aac96a58d7d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            618,
+            323,
+            833,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "distinguishing features",
+        "text_level": 2,
+        "bbox": [
+            161,
+            498,
+            322,
+            514
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Inflexible, rigid star with thick, solid, spongy disc. Pentagonal in shape. Marginal plates indistinct. Distinct madreporite. Fine raised bumps (sheaths of adambulacral spines) form distinct rows along each arm, but no spines apparent. Thick fleshy starfish with smooth aboral and oral surface. Double rows of tube feet. No marginal plates visible. Patterning on aboral surface can be very distinct when brooding (see third image).",
+        "bbox": [
+            161,
+            514,
+            489,
+            644
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Colour",
+        "text_level": 2,
+        "bbox": [
+            163,
+            656,
+            211,
+            670
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Bright pink to orange on aboral; pale yellow on oral surface.",
+        "bbox": [
+            161,
+            671,
+            487,
+            701
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Size",
+        "text_level": 2,
+        "bbox": [
+            163,
+            714,
+            194,
+            730
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Can reach up to 230 mm diameter.",
+        "bbox": [
+            161,
+            731,
+            386,
+            745
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "distribution",
+        "text_level": 2,
+        "bbox": [
+            510,
+            498,
+            596,
+            513
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "South African endemic. West and South Coasts of South Africa; from 400 to 1 000+ m depth.",
+        "bbox": [
+            509,
+            513,
+            836,
+            544
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Similar species",
+        "text_level": 2,
+        "bbox": [
+            509,
+            556,
+            615,
+            571
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Spoladaster veneris, but Chondraster ellatosis does not inflate and is more leathery.",
+        "bbox": [
+            509,
+            571,
+            835,
+            602
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "references",
+        "text_level": 2,
+        "bbox": [
+            509,
+            614,
+            589,
+            630
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Courtman-Stock J. 1976. The Echinoderms of Southern Africa. British Museum (Natural History): London. pp. 73-74 (277pp.).",
+        "bbox": [
+            509,
+            630,
+            836,
+            675
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Downey ME. 1992. Starfishes of the Atlantic (Volume 3). Chapman and Hall: London. pp. 202-204 (794pp.).",
+        "bbox": [
+            509,
+            680,
+            836,
+            724
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Species identification confirmed by Dr C. Mah, Smithsonian, Washington, June 2015.",
+        "bbox": [
+            509,
+            728,
+            835,
+            759
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Phylum: Echinodermata",
+        "bbox": [
+            695,
+            53,
+            835,
+            67
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "427",
+        "bbox": [
+            912,
+            956,
+            941,
+            969
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/b5d98149ccf3e4b8bcb260938616fe0a05784227076be21c58fb83249bdb681e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=2>Spoladaster veneris (SpoBra)</td></tr><tr><td rowspan=1 colspan=1>Phylum:</td><td rowspan=1 colspan=1>Echinodermata</td></tr><tr><td rowspan=1 colspan=1>Class:</td><td rowspan=1 colspan=1>Asteroidea</td></tr><tr><td rowspan=1 colspan=1>Order:</td><td rowspan=1 colspan=1>Valvatida</td></tr><tr><td rowspan=1 colspan=1>Family:</td><td rowspan=1 colspan=1>Poraniidae</td></tr><tr><td rowspan=1 colspan=1>Genus:</td><td rowspan=1 colspan=1>Spoladaster</td></tr><tr><td rowspan=1 colspan=1>Species:</td><td rowspan=1 colspan=1>veneris</td></tr><tr><td rowspan=1 colspan=2>Common name:    Inflated star</td></tr></table>",
+        "bbox": [
+            163,
+            116,
+            571,
+            299
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ba9910f5b83f9348c731ea9d06c25168d264b757337dd223a7d0ab9f2730e4f9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            588,
+            114,
+            836,
+            279
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/b8755a5ccc6dfd3f35a9ef6b4f2ca5a2c63ef7839753a0a71e697dcfc2117d47.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            163,
+            322,
+            489,
+            551
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "distinguishing features",
+        "text_level": 2,
+        "bbox": [
+            161,
+            575,
+            322,
+            592
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Pentagonal in shape, cushion-like body, often inflated when landed (as in photo), but slowly deflates with time out of water. Numerous papillae coat the aboral surface. Ventral smooth with fine lines.",
+        "bbox": [
+            161,
+            592,
+            489,
+            664
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Colour",
+        "text_level": 2,
+        "bbox": [
+            161,
+            676,
+            211,
+            692
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Speckled brilliant orange aboral surface and pale cream smooth oral surface.",
+        "bbox": [
+            161,
+            693,
+            487,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Size",
+        "text_level": 2,
+        "bbox": [
+            163,
+            734,
+            194,
+            750
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Up to 160 mm diameter.",
+        "bbox": [
+            161,
+            751,
+            321,
+            766
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/e74ee4b8c4c6a339abfe8f79af7a783a8bdb662295217a306c3b7483962ff05a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            509,
+            322,
+            833,
+            551
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "distribution",
+        "text_level": 2,
+        "bbox": [
+            509,
+            575,
+            596,
+            590
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "West and South Coasts of South Africa; from 40 to 205+ m depth.",
+        "bbox": [
+            509,
+            590,
+            835,
+            621
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Similar species",
+        "text_level": 2,
+        "bbox": [
+            509,
+            633,
+            615,
+            649
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Chondraster elattosis, but S. brachyactis inflates and is not as leathery.",
+        "bbox": [
+            509,
+            650,
+            835,
+            680
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "references",
+        "text_level": 2,
+        "bbox": [
+            509,
+            692,
+            589,
+            707
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Downey ME. 1992. Starfishes of the Atlantic (Volume 3). Chapman and Hall: London. pp. 222-224 (794pp.).",
+        "bbox": [
+            509,
+            708,
+            836,
+            752
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Phylum: Echinodermata",
+        "bbox": [
+            163,
+            53,
+            302,
+            67
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "428",
+        "bbox": [
+            57,
+            957,
+            85,
+            969
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/9c2f6d75a6269198747239e0a8c8c04a708d865f88fd90532b99a8661256146b.jpg",
+        "table_caption": [
+            "Poraniopsis echinaster (PorEch)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Phylum:</td><td rowspan=1 colspan=1>Echinodermata</td></tr><tr><td rowspan=1 colspan=1>Class:</td><td rowspan=1 colspan=1>Asteriodea</td></tr><tr><td rowspan=1 colspan=1>Order:</td><td rowspan=1 colspan=1>Valvatida</td></tr><tr><td rowspan=1 colspan=1>Family:</td><td rowspan=1 colspan=1>Poraniidae</td></tr><tr><td rowspan=1 colspan=1>Genus:</td><td rowspan=1 colspan=1>Poraniopsis</td></tr><tr><td rowspan=1 colspan=1>Species:</td><td rowspan=1 colspan=1>echinaster</td></tr><tr><td rowspan=1 colspan=1>Common name:</td><td rowspan=1 colspan=1>Spiky cushion star</td></tr></table>",
+        "bbox": [
+            163,
+            147,
+            571,
+            299
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/cbd2e97b7c582dd2d79fb70858886ed094345dc1c9c3275de598a6ec8ea4e0d4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            163,
+            322,
+            487,
+            551
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4298e191b0e01c7171eb8aef595fd07f06cb57314c411c3b17a683a6d5a25de2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            588,
+            112,
+            836,
+            279
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "distinguishing features",
+        "text_level": 2,
+        "bbox": [
+            161,
+            575,
+            322,
+            592
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Short-armed, stellate body form with a reticular skeleton (spiky skeleton with soft tissue covering). Distinct raised spines covering the aboral surface 1-4 mm in length. Arms fairly rigid, with ends often turning upwards or curling inwards. Two rows of tube feet. Madreporite white in colour, located offcentre halfway to base of arms. Strong spines along the base of arms.",
+        "bbox": [
+            161,
+            592,
+            489,
+            707
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Colour",
+        "text_level": 2,
+        "bbox": [
+            161,
+            719,
+            211,
+            734
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Deep orange to red or even pure white, with spines light red to yellowish white. Pale oral surface.",
+        "bbox": [
+            161,
+            736,
+            487,
+            765
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Size",
+        "text_level": 2,
+        "bbox": [
+            163,
+            777,
+            194,
+            793
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Average 50 up to 160 mm diameter, mostly small specimens but occasionally large too.",
+        "bbox": [
+            161,
+            794,
+            487,
+            824
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "distribution",
+        "text_level": 2,
+        "bbox": [
+            163,
+            835,
+            248,
+            851
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "South Atlantic including West Coast of South Africa.",
+        "bbox": [
+            161,
+            852,
+            487,
+            868
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/5540298c6937e792eb870be1377a589c1a4efcfece7b65a338b674a29614c6f6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            509,
+            322,
+            833,
+            551
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Similar species",
+        "text_level": 2,
+        "bbox": [
+            509,
+            575,
+            615,
+            592
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Lophaster quadrispinus, which has many dense raised tubercles on the aboral surface or Diplopteraster multipes, which is more cushion-like, with arms that are not as clearly defined as P. echinaster.",
+        "bbox": [
+            507,
+            592,
+            836,
+            650
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "references",
+        "text_level": 2,
+        "bbox": [
+            509,
+            663,
+            589,
+            677
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Courtman-Stock J. 1976. The Echinoderms of Southern Africa. British Museum (Natural History): London. p. 90 (277pp.).",
+        "bbox": [
+            509,
+            677,
+            836,
+            722
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Clark AM and Downey ME. 1992. Starfishes of the Atlantic (Volume 3). Chapman and Hall: London. pp. 220-222 (794pp.).",
+        "bbox": [
+            509,
+            727,
+            836,
+            772
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Species identification confirmed by Dr C. Mah, Smithsonian, Washington, June 2015.",
+        "bbox": [
+            509,
+            777,
+            835,
+            807
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Phylum: Echinodermata",
+        "bbox": [
+            695,
+            53,
+            835,
+            67
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "429",
+        "bbox": [
+            912,
+            957,
+            942,
+            969
+        ],
+        "page_idx": 3
+    }
+]

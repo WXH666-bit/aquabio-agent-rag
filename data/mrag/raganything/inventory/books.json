@@ -1,0 +1,18 @@
+[
+  {
+    "book_id": "living_guide",
+    "source_file": "FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "path": "C:\\Users\\cyq\\Desktop\\rag\\AquaBio-AgentRAG\\data\\mrag\\pdfs\\FIELD IDENTIFICATION GUIDE TO THE LIVING.pdf",
+    "pages": 422,
+    "image_objects": 1959,
+    "sha256": "02aa021c1bb37af939437d40f33b53c4ca39e4091f8eb9419a36d6c4abedd1a6"
+  },
+  {
+    "book_id": "sa_invertebrates",
+    "source_file": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "path": "C:\\Users\\cyq\\Desktop\\rag\\AquaBio-AgentRAG\\data\\mrag\\pdfs\\Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "pages": 501,
+    "image_objects": 1477,
+    "sha256": "8919616a2d374f1e9f9e835a31769f95f4e51043d83b36c86095feee21401718"
+  }
+]

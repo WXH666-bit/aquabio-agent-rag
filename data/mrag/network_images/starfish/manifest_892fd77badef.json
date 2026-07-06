@@ -1,0 +1,17 @@
+[
+  {
+    "image_id": "network_e367f9c02da0",
+    "image_path": "data/mrag/network_images/starfish/e367f9c02da0e0fb.jpg",
+    "image_url": "/files/data/mrag/network_images/starfish/e367f9c02da0e0fb.jpg",
+    "caption": "File:Asterias rubens.jpg",
+    "scientific_name": "Starfish",
+    "common_name": "",
+    "page": null,
+    "score": 0.0,
+    "image_role": "specimen",
+    "source": "wikimedia_commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Asterias_rubens.jpg",
+    "license": "CC BY-SA 4.0",
+    "map_verified": false
+  }
+]
