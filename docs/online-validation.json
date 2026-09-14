@@ -1,0 +1,399 @@
+{
+  "timestamp": "2026-09-14T10:19:15.826154+00:00",
+  "provider": "stepfun",
+  "model": "step-3.7-flash",
+  "base_url": "https://api.stepfun.com/step_plan/v1",
+  "checks": [
+    {
+      "name": "chroma.discovery",
+      "passed": true,
+      "detail": [
+        "search_species_text",
+        "search_image_captions",
+        "search_pdf_entity_images",
+        "get_entity_sample_images",
+        "search_multimodal",
+        "search_pdf",
+        "generate_image_caption",
+        "get_source_detail"
+      ],
+      "seconds": 3.01
+    },
+    {
+      "name": "raganything.discovery",
+      "passed": true,
+      "detail": [
+        "raganything_index_status",
+        "raganything_graph_neighbors",
+        "raganything_hybrid_search",
+        "raganything_image_search",
+        "search_pdf_images",
+        "raganything_entity_images",
+        "raganything_source_detail",
+        "get_source_detail"
+      ],
+      "seconds": 0.098
+    },
+    {
+      "name": "model.native_tool_to_mcp",
+      "passed": true,
+      "detail": {
+        "tool": "search_species_text",
+        "result_count": 3
+      },
+      "seconds": 7.293
+    },
+    {
+      "name": "chroma.search_species_text",
+      "passed": true,
+      "detail": {
+        "count": 3
+      },
+      "seconds": 3.285
+    },
+    {
+      "name": "chroma.search_image_captions",
+      "passed": true,
+      "detail": {
+        "count": 3
+      },
+      "seconds": 3.214
+    },
+    {
+      "name": "chroma.search_pdf",
+      "passed": true,
+      "detail": {
+        "count": 3
+      },
+      "seconds": 3.279
+    },
+    {
+      "name": "chroma.search_multimodal",
+      "passed": true,
+      "detail": {
+        "count": 3
+      },
+      "seconds": 3.158
+    },
+    {
+      "name": "chroma.search_pdf_entity_images",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "query",
+          "expanded_query",
+          "entity",
+          "count",
+          "results",
+          "retrieval_order",
+          "warnings"
+        ]
+      },
+      "seconds": 3.074
+    },
+    {
+      "name": "chroma.get_entity_sample_images",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "entity",
+          "count",
+          "results"
+        ]
+      },
+      "seconds": 3.001
+    },
+    {
+      "name": "chroma.generate_image_caption",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "description",
+          "possible_species",
+          "visible_features",
+          "degradation",
+          "confidence",
+          "limitations",
+          "structured_output"
+        ]
+      },
+      "seconds": 20.443
+    },
+    {
+      "name": "chroma.get_source_detail",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "ids",
+          "embeddings",
+          "documents",
+          "uris",
+          "included",
+          "data",
+          "metadatas"
+        ]
+      },
+      "seconds": 3.011
+    },
+    {
+      "name": "raganything.raganything_index_status",
+      "passed": true,
+      "detail": {
+        "storage_valid": true,
+        "graph_nodes": 24,
+        "graph_edges": 32,
+        "chunks": 1
+      },
+      "seconds": 0.056
+    },
+    {
+      "name": "raganything.raganything_graph_neighbors",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "entity",
+          "depth",
+          "nodes",
+          "relations",
+          "graph_file",
+          "images",
+          "warnings"
+        ]
+      },
+      "seconds": 0.222
+    },
+    {
+      "name": "raganything.raganything_hybrid_search",
+      "passed": true,
+      "detail": {
+        "entities": 10,
+        "relations": 12,
+        "pages": [
+          429
+        ]
+      },
+      "seconds": 80.796
+    },
+    {
+      "name": "raganything.raganything_image_search",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "query",
+          "expanded_query",
+          "entity",
+          "count",
+          "results",
+          "retrieval_order",
+          "warnings"
+        ]
+      },
+      "seconds": 0.078
+    },
+    {
+      "name": "raganything.search_pdf_images",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "query",
+          "expanded_query",
+          "entity",
+          "count",
+          "results",
+          "retrieval_order",
+          "warnings"
+        ]
+      },
+      "seconds": 0.075
+    },
+    {
+      "name": "raganything.raganything_entity_images",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "entity",
+          "count",
+          "results"
+        ]
+      },
+      "seconds": 0.078
+    },
+    {
+      "name": "raganything.raganything_source_detail",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "query",
+          "units",
+          "chunks",
+          "images",
+          "relations",
+          "counts",
+          "warnings",
+          "index_status"
+        ]
+      },
+      "seconds": 0.194
+    },
+    {
+      "name": "raganything.get_source_detail",
+      "passed": true,
+      "detail": {
+        "keys": [
+          "query",
+          "units",
+          "chunks",
+          "images",
+          "relations",
+          "counts",
+          "warnings",
+          "index_status"
+        ]
+      },
+      "seconds": 0.121
+    },
+    {
+      "name": "workflow.text",
+      "passed": true,
+      "detail": {
+        "answer": "海星的外形特点主要体现在以下几个方面：\n\n**整体形态**：海星通常呈星形或放射状，具有明显的中央盘，从中央盘向外伸出五条或更多腕足[E1][E3][E6]。\n\n**体表纹理**：海星体表可能有颗粒、短刺或粗糙纹理[E1][E3][E6]。\n\n**颜色**：颜色多样，常见的有橙色、红色、褐色到灰色不等[E1][E3][E6]。\n\n**轮廓特征**：在水下图像中，海星的外轮廓通常比鱼类更固定，运动姿态也不明显[E1][E3][E6][E8]。\n\n这些特征使得海星在识别时，应重点关注放射状腕足、中央盘以及整体星形轮廓，而不是单独依赖颜色[E2][E6][E8]。",
+        "mcp_tools": [
+          "search_species_text",
+          "search_pdf",
+          "raganything_hybrid_search"
+        ],
+        "provider_fallback": false,
+        "warnings": [],
+        "trace": [
+          "session_init:online-text",
+          "memory_load:0",
+          "followup_resolver:False:starfish:normal",
+          "router:text_qa",
+          "query_rewrite",
+          "source_selection:text_retriever,pdf_retriever;flow=pdf_graph_evidence",
+          "react_tool_plan:step=1;mode=deterministic;tools=text_retriever,pdf_retriever",
+          "retrieval:text=9,web=0,image=0,pair=0,pdf=1,mcp_graph=1,mcp_pdf_images=0,filter_species=starfish,elapsed=8.51s",
+          "mcp_tool_call:search_species_text status=success latency=3432ms results=9",
+          "mcp_tool_call:search_pdf status=success latency=3287ms results=0",
+          "mcp_tool_call:raganything_hybrid_search status=success latency=1786ms results=1",
+          "rerank:weighted:10",
+          "context_builder:10",
+          "answer_generation:stepfun:step-3.7-flash:2.76s",
+          "response_guard:normal",
+          "evaluation:True:1.00",
+          "finalize",
+          "memory_save:1"
+        ]
+      },
+      "seconds": 11.371
+    },
+    {
+      "name": "workflow.memory",
+      "passed": true,
+      "detail": {
+        "answer": "海星通常生活在**潮间带、浅海海底、岩石、珊瑚礁、海草床和沙泥底环境**中[E6][E9]。不同类群可以分布在从较浅海域到深海区域，它们常贴附在海底表面或缓慢移动[E6][E9]。",
+        "mcp_tools": [
+          "search_species_text"
+        ],
+        "provider_fallback": false,
+        "warnings": [],
+        "trace": [
+          "session_init:online-text",
+          "memory_load:1",
+          "followup_resolver:True:starfish:normal",
+          "router:followup_text_qa",
+          "query_rewrite",
+          "source_selection:text_retriever;flow=text_basic_rag",
+          "react_tool_plan:step=1;mode=deterministic;tools=text_retriever",
+          "retrieval:text=9,web=0,image=0,pair=0,pdf=0,mcp_graph=0,mcp_pdf_images=0,filter_species=starfish,elapsed=3.15s",
+          "mcp_tool_call:search_species_text status=success latency=3150ms results=9",
+          "rerank:weighted:9",
+          "context_builder:9",
+          "answer_generation:stepfun:step-3.7-flash:1.91s",
+          "response_guard:normal",
+          "evaluation:True:1.00",
+          "finalize",
+          "memory_save:1"
+        ]
+      },
+      "seconds": 5.166
+    },
+    {
+      "name": "workflow.pdf",
+      "passed": true,
+      "detail": {
+        "answer": "**Luidia sarsii africana**（常见名：Legs break easily starfish）的鉴别特征与栖息地如下：\n\n**鉴别特征**  \n腕极易从中央盘脱落；反口缘边缘有明显棘刺；腕长、柔韧、扁平且逐渐变细，呈带状；通常具有5个腕[E13]。\n\n**栖息地与分布**  \n为南部非洲特有种，分布于南非西海岸和南海岸，至伊丽莎白港；栖息深度为54米至360米以上[E13]。\n\n**来源**  \nField-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf, page 429[E13]。",
+        "mcp_tools": [
+          "search_image_captions",
+          "search_pdf",
+          "raganything_hybrid_search"
+        ],
+        "provider_fallback": false,
+        "warnings": [],
+        "trace": [
+          "session_init:online-pdf",
+          "memory_load:0",
+          "followup_resolver:False:none:normal",
+          "router:pdf_qa",
+          "query_rewrite",
+          "source_selection:image_retriever,pdf_retriever;flow=pdf_graph_evidence",
+          "react_tool_plan:step=1;mode=deterministic;tools=image_retriever,pdf_retriever",
+          "retrieval:text=0,web=0,image=12,pair=0,pdf=12,mcp_graph=1,mcp_pdf_images=0,filter_species=none,elapsed=6.72s",
+          "mcp_tool_call:search_image_captions status=success latency=3277ms results=12",
+          "mcp_tool_call:search_pdf status=success latency=3349ms results=12",
+          "mcp_tool_call:raganything_hybrid_search status=success latency=94ms results=1",
+          "rerank:weighted:24",
+          "context_builder:24",
+          "answer_generation:stepfun:step-3.7-flash:7.85s",
+          "response_guard:normal",
+          "evaluation:True:1.00",
+          "finalize",
+          "memory_save:0"
+        ]
+      },
+      "seconds": 14.686
+    },
+    {
+      "name": "workflow.image",
+      "passed": true,
+      "detail": {
+        "answer": "根据图片视觉分析，该生物属于海星纲（Asteroidea），其形态特征如下：\n\n1. **中央体盘**：呈圆形，表面覆盖密集的颗粒状突起[image_caption]。\n2. **腕足**：细长略扁，因部分遮挡可见约8-12个，边缘具白色棘刺[image_caption]。\n3. **体表纹理与颜色**：散布黄色或米色斑点，主体颜色为红棕至紫棕色；腕足边缘呈白色[image_caption]。\n4. **生境**：位于潮间带岩石环境，周围有藻类和藤壶附着[image_caption]。\n\n从检索证据来看，**Coronaster volsellatus**（False brisingid/Spiny pom-pom starfish）的描述与图片形态存在部分吻合：该物种具有小圆形体盘、细长腕足（通常最多11个），且腕足和体表覆盖尖刺[E13]。然而，其典型颜色为橙色与白色、三文鱼色至红色[E13]，与图片中的红棕至紫棕色基调及黄色斑点纹理存在差异。此外，该物种分布于南非西海岸250-300米深海[E13]，而图片显示的是潮间带岩石生境，与候选物种（如北太平洋的Pycnopodia helianthoides）的生境更为一致。\n\n图片中存在显著不确定性：腕足实际数量无法确认（约8-12个），而典型Pycnopodia helianthoides通常具有20-24个腕足[image_caption]；同时缺少腹面结构和比例尺，顶部视角也限制了准确鉴定[image_caption]。因此，该生物更可能属于候选列表中的Stichaster striatus、Asterias amurensis或Luidia/Astropecten属，需更多信息佐证。\n\n注：系统检索并显示一张最匹配的PDF参考图，为**Coronaster volsellatus**的标本图（Field-Guide-to-SA-Offshore-Marine-Invertebrates, PDF第401页）[E13]，但该参考物种与图片候选物种地理分布不同，形态对比仅供参考。",
+        "mcp_tools": [
+          "search_species_text",
+          "search_multimodal",
+          "search_pdf",
+          "raganything_hybrid_search",
+          "search_pdf_images"
+        ],
+        "provider_fallback": false,
+        "warnings": [],
+        "trace": [
+          "session_init:online-image",
+          "memory_load:0",
+          "followup_resolver:False:none:normal",
+          "router:multimodal_qa",
+          "query_rewrite",
+          "source_selection:vlm_caption,text_retriever,image_retriever,pdf_image_retriever,multimodal_retriever,pdf_retriever;flow=multimodal_pdf_image_graph",
+          "react_tool_plan:step=1;mode=deterministic;tools=vlm_caption,text_retriever,image_retriever,pdf_image_retriever,multimodal_retriever,pdf_retriever",
+          "vision:completed:14.70s",
+          "retrieval:text=12,web=0,image=8,pair=12,pdf=12,mcp_graph=1,mcp_pdf_images=8,filter_species=none,elapsed=20.54s",
+          "mcp_tool_call:search_species_text status=success latency=3190ms results=12",
+          "mcp_tool_call:search_multimodal status=success latency=3254ms results=12",
+          "mcp_tool_call:search_pdf status=success latency=3357ms results=12",
+          "mcp_tool_call:raganything_hybrid_search status=success latency=10636ms results=1",
+          "mcp_tool_call:search_pdf_images status=success latency=101ms results=8",
+          "rerank:weighted:44",
+          "context_builder:37",
+          "answer_generation:stepfun:step-3.7-flash:25.74s",
+          "response_guard:normal",
+          "evaluation:True:1.00",
+          "finalize",
+          "memory_save:3"
+        ]
+      },
+      "seconds": 61.082
+    }
+  ],
+  "scope": "One real PDF unit: sa_taxon_lucafr_p0429; existing Chroma corpus; 16 MCP tools",
+  "passed": true
+}

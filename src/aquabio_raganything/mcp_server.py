@@ -16,7 +16,7 @@ from .query_adapter import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.getenv("AQUABIO_PROJECT_ROOT", str(Path.cwd()))).resolve()
 PATHS = RAGAnythingPaths.from_root(ROOT)
 SETTINGS = RAGAnythingSettings.from_env()
 MCP = FastMCP(

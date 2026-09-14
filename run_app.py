@@ -6,6 +6,7 @@ import urllib.error
 import json
 import os
 import importlib
+import socket
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 os.chdir(ROOT)
@@ -31,7 +32,7 @@ REQUIRED_PACKAGES = {
     "chromadb": "chromadb>=1.0,<2",
     "langgraph": "langgraph>=1.0,<2",
     "langgraph.checkpoint.sqlite": "langgraph-checkpoint-sqlite>=3.0,<4",
-    "mcp": "mcp>=1.20,<2",
+    "mcp.server.fastmcp": "mcp>=1.20,<2",
     "pydantic": "pydantic>=2.10,<3",
     "fastapi": "fastapi>=0.115,<1",
     "uvicorn": "uvicorn>=0.30,<1",
@@ -96,7 +97,12 @@ def check_vector_db():
 def stop_all():
     for p in procs:
         try:
-            p.terminate()
+            if p.poll() is not None:
+                continue
+            if os.name == "nt":
+                subprocess.run(["taskkill", "/PID", str(p.pid), "/T", "/F"], capture_output=True)
+            else:
+                p.terminate()
             p.wait(timeout=5)
         except Exception:
             try:
@@ -116,6 +122,8 @@ def api_get(path, timeout=5):
 
 
 def main():
+    from aquabio.config import load_env
+    load_env(os.path.join(ROOT, ".env"))
     env = os.environ.copy()
     env["AQUABIO_API_URL"] = API_URL
 
@@ -134,6 +142,31 @@ def main():
 
     check_vector_db()
     print()
+
+    # The UI's full-MCP mode requires the graph HTTP server as well as stdio.
+    mcp_port = int(os.getenv("AQUABIO_RAG_MCP_PORT", "8765"))
+    env["RAGANYTHING_MCP_URL"] = os.getenv("RAGANYTHING_MCP_URL", f"http://127.0.0.1:{mcp_port}/mcp")
+    graph_env = {**env, "AQUABIO_RAG_MCP_TRANSPORT": "streamable-http", "AQUABIO_RAG_MCP_PORT": str(mcp_port)}
+    graph_python = os.path.join(ROOT, ".venv-raganything", "Scripts", "python.exe")
+    if not os.path.isfile(graph_python):
+        graph_python = sys.executable
+    graph_proc = subprocess.Popen([graph_python, "-m", "aquabio_raganything.mcp_server"], cwd=ROOT, env=graph_env)
+    procs.append(graph_proc)
+    try:
+        for _ in range(40):
+            if graph_proc.poll() is not None:
+                raise RuntimeError("图谱 MCP 启动失败，请安装项目 raganything 可选依赖。")
+            try:
+                with socket.create_connection(("127.0.0.1", mcp_port), timeout=1):
+                    break
+            except OSError:
+                time.sleep(0.5)
+        else:
+            raise RuntimeError("图谱 MCP 启动超时。")
+    except BaseException:
+        stop_all()
+        raise
+    print(f"[OK] 图谱 MCP: {env['RAGANYTHING_MCP_URL']}")
 
     # Step 1: Start FastAPI
     print(f"[1/5] 启动 FastAPI 后端（端口 {API_PORT}）...")

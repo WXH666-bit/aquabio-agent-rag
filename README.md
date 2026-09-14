@@ -9,7 +9,9 @@
 ## 快速启动
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+pip install -e ".[raganything]"
 python run_app.py
 ```
 
@@ -72,6 +74,37 @@ MRAG_EMBEDDING_MODEL=all-MiniLM-L6-v2
 ```
 
 > `.env` 已在 `.gitignore` 中排除，不会被提交到版本控制。
+
+### StepFun 在线模型与 MCP 验收
+
+已用 `step-3.7-flash` 实测模型原生工具调用、图像分析、两个 MCP 服务的
+16 个工具，以及文本、多轮追问、PDF 和图文 LangGraph 问答。
+结果见 [在线验证报告](docs/online-validation.json) 和 [验证说明](docs/在线模型与MCP验证.md)。
+图谱验证使用现有 PDF 第 429 页的一条真实物种记录，当前生成 24 个实体、32 条关系；
+这不代表整套 PDF 已完成图谱索引。
+
+在 `.env` 中配置（密钥自行填写）：
+
+```ini
+AQUABIO_LLM_PROVIDER=stepfun
+AQUABIO_VISION_PROVIDER=stepfun
+RAGANYTHING_TEXT_LLM_PROVIDER=stepfun
+STEPFUN_API_KEY=your_key
+STEPFUN_MODEL=step-3.7-flash
+STEPFUN_BASE_URL=https://api.stepfun.com/step_plan/v1
+MRAG_EMBEDDING_BACKEND=onnx
+AQUABIO_LLM_READ_TIMEOUT=180
+RAGANYTHING_QUERY_TIMEOUT=180
+RAGANYTHING_MCP_TIMEOUT=210
+```
+
+```powershell
+.\.venv\Scripts\python.exe raganything_cli.py index-book-native --book sa_invertebrates --unit sa_taxon_lucafr_p0429 --resume
+.\.venv\Scripts\python.exe scripts/verify_online_stack.py
+```
+
+第二条命令会产生真实模型调用费用，自动启动临时图谱 MCP 服务并清理测试会话。
+模型凭据只从环境变量或忽略的 `.env` 读取，不写入报告。
 
 ---
 
@@ -138,6 +171,7 @@ python -m aquabio_mrag.mcp_server
 
 ```cmd
 python -m unittest discover -s tests -v
+python scripts/evaluate_retrieval.py --output docs/retrieval-baseline.json
 ```
 
 ---
@@ -167,6 +201,24 @@ python -m unittest discover -s tests -v
 完整依赖见 [requirements.txt](requirements.txt) 和 [pyproject.toml](pyproject.toml)。
 
 ---
+
+## 索引维护与接口约束
+
+旧索引缺少物种和来源元数据时，可运行 `python mrag_cli.py repair-metadata`。
+该命令先验证原始文档与索引的 ID、正文完全一致，再恢复元数据；不会重新计算嵌入。
+重建索引使用新集合，校验完成后通过 manifest 原子切换，保留旧集合供回滚。
+
+`requirements.txt` 从 `pyproject.toml` 安装项目。安装后的 CLI 支持
+`aquabio-mrag-cli --root 项目目录 db-info`；源码入口仍可直接使用。
+会话 ID 必须为 1–80 位小写 ASCII 字母、数字、点、下划线或连字符，首位为字母或数字；
+不再把不同输入静默转换为同一个 ID。Windows 保留文件名不允许作为会话 ID。
+图片上传上限为 20 MiB，PDF 为 50 MiB，并检查文件内容。
+
+后台任务最多同时执行 4 个，总排队与执行容量为 16 个；满额返回 HTTP 429。
+取消会在当前外部调用结束后停止后续节点，尚未提交的会话记忆不会落盘。
+SSE 返回 `node_start`、`node_progress`、`final`／`error` 事件。
+
+详细改动和验证范围见 [逐项修复与验证记录](docs/逐项修复与验证记录.md)。
 
 ## 详细文档
 

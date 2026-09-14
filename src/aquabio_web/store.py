@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import uuid
+from aquabio_mrag.conversation import ConversationStore
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -93,6 +94,12 @@ class WebStore:
             UNIQUE(session_id, turn_id)
         );
         """
+        schema += """
+        CREATE INDEX IF NOT EXISTS messages_session_time ON messages(session_id, created_at);
+        CREATE INDEX IF NOT EXISTS attachments_session ON attachments(session_id);
+        CREATE INDEX IF NOT EXISTS evidence_session_turn ON evidence(session_id, turn_id);
+        CREATE INDEX IF NOT EXISTS trace_session_turn ON trace_events(session_id, turn_id);
+        """
         with self.connection() as connection:
             connection.executescript(schema)
             connection.execute(
@@ -121,7 +128,7 @@ class WebStore:
     def create_session(
         self, title: str = "新会话", session_id: str | None = None
     ) -> dict[str, Any]:
-        value = session_id or f"sess_{uuid.uuid4().hex[:12]}"
+        value = ConversationStore.normalize_session_id(session_id) if session_id is not None else f"sess_{uuid.uuid4().hex[:12]}"
         now = _now()
         with self.connection() as connection:
             connection.execute(

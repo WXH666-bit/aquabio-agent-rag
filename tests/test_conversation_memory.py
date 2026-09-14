@@ -3,6 +3,8 @@ from __future__ import annotations
 import tempfile
 import unittest
 from dataclasses import replace
+from unittest.mock import patch
+from support import isolated_paths, fixture_search
 from pathlib import Path
 
 from aquabio_mrag.config import MRAGPaths, MRAGSettings
@@ -29,10 +31,9 @@ class ConversationStoreTests(unittest.TestCase):
             self.assertTrue(store.path_for("alpha").is_file())
 
     def test_session_id_is_normalized(self) -> None:
-        self.assertEqual(
-            ConversationStore.normalize_session_id(" demo session "),
-            "demo_session",
-        )
+        with self.assertRaises(ValueError):
+            ConversationStore.normalize_session_id(" demo session ")
+        self.assertEqual(ConversationStore.normalize_session_id("demo_session"), "demo_session")
 
 
 class FollowupWorkflowTests(unittest.TestCase):
@@ -40,9 +41,41 @@ class FollowupWorkflowTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.settings = MRAGSettings.from_env()
 
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.paths = isolated_paths(BASE_PATHS, directory.name)
+        client = patch("aquabio_mrag.vector_db.chromadb.PersistentClient")
+        client.start()
+        self.addCleanup(client.stop)
+        retrieval = patch("aquabio_mrag.retrieval.MultiSourceRetriever.search", side_effect=fixture_search)
+        retrieval.start()
+        self.addCleanup(retrieval.stop)
+
+    def test_cancelled_graph_does_not_save_memory(self):
+        from threading import Event
+        from concurrent.futures import CancelledError
+        from aquabio_mrag.cancellation import cancel_event
+        event = Event()
+        token = cancel_event.set(event)
+        self.addCleanup(cancel_event.reset, token)
+        workflow = AquaBioMRAGWorkflow(self.paths, self.settings, offline=True)
+        def report(value):
+            if value.startswith("answer_generation:"):
+                event.set()
+        with self.assertRaises(CancelledError):
+            workflow.invoke("海星的颜色是什么", session_id="cancelled", progress_callback=report)
+        self.assertFalse(workflow.conversations.path_for("cancelled").exists())
+
+    def test_deferred_memory_is_returned_without_writing(self):
+        workflow = AquaBioMRAGWorkflow(self.paths, self.settings, offline=True)
+        state = workflow.invoke("海星的颜色是什么", session_id="deferred", options={"defer_memory_save": True})
+        self.assertTrue(state["pending_memory_turn"])
+        self.assertFalse(workflow.conversations.path_for("deferred").exists())
+
     def test_current_image_reference_is_not_a_followup(self) -> None:
         workflow = AquaBioMRAGWorkflow(
-            BASE_PATHS, self.settings, offline=True
+            self.paths, self.settings, offline=True
         )
         result = workflow.followup_resolver_node(
             {
@@ -60,7 +93,7 @@ class FollowupWorkflowTests(unittest.TestCase):
 
     def test_followup_without_history_requests_clarification(self) -> None:
         workflow = AquaBioMRAGWorkflow(
-            BASE_PATHS, self.settings, offline=True
+            self.paths, self.settings, offline=True
         )
         result = workflow.followup_resolver_node(
             {
@@ -76,7 +109,7 @@ class FollowupWorkflowTests(unittest.TestCase):
     def test_cross_process_equivalent_followup_resolves_starfish(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             paths = replace(
-                BASE_PATHS, sessions_dir=Path(directory)
+                self.paths, sessions_dir=Path(directory)
             )
             image = (
                 ROOT

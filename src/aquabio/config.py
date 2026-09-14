@@ -33,6 +33,13 @@ class Settings:
         provider = os.getenv(
             "AQUABIO_LLM_PROVIDER", cls.provider
         ).lower()
+        if provider == "stepfun":
+            return cls(
+                api_key=os.getenv("STEPFUN_API_KEY", ""),
+                base_url=os.getenv("STEPFUN_BASE_URL", "https://api.stepfun.com/step_plan/v1"),
+                model=os.getenv("STEPFUN_MODEL", "step-3.7-flash"),
+                site_url="", provider=provider,
+            )
         if provider == "qwen":
             api_key = os.getenv("QWEN_API_KEY", "")
             key_file = os.getenv("QWEN_KEY_FILE", "")

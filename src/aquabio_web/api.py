@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 import json
+import asyncio
+import threading
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse, Response, JSONResponse
+from starlette.concurrency import run_in_threadpool
+from .attachments import UPLOAD_LIMITS
+from .tasks import TaskQueueFull
 
 from .schemas import (
     ChatRequest,
@@ -19,8 +25,34 @@ from .service import ChatService
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SERVICE = ChatService(ROOT)
+class LazyService:
+    def __init__(self):
+        self.instance = None
+        self.lock = threading.Lock()
+
+    def __getattr__(self, name):
+        with self.lock:
+            if self.instance is None:
+                self.instance = ChatService(ROOT)
+            service = self.instance
+        return getattr(service, name)
+
+
+SERVICE = LazyService()
+
+
+@asynccontextmanager
+async def lifespan(app):
+    yield
+    if isinstance(SERVICE, LazyService):
+        if SERVICE.instance is not None:
+            await run_in_threadpool(SERVICE.instance.close)
+            SERVICE.instance = None
+    else:
+        await run_in_threadpool(SERVICE.close)
+
 app = FastAPI(
+    lifespan=lifespan,
     title="AquaBio AgentRAG 水下生物智能问答 API",
     version="1.0.0",
     description=(
@@ -40,6 +72,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.exception_handler(ValueError)
+async def invalid_request(request, error):
+    return JSONResponse(status_code=400, content={"detail": str(error)})
 
 
 @app.get("/api/health", summary="健康检查", tags=["系统"])
@@ -92,7 +129,10 @@ def chat(request: ChatRequest) -> dict:
 
 @app.post("/api/chat/tasks", summary="提交异步聊天任务", tags=["聊天"])
 def submit_chat_task(request: ChatRequest) -> dict:
-    return SERVICE.submit_chat(request)
+    try:
+        return SERVICE.submit_chat(request)
+    except TaskQueueFull as error:
+        raise HTTPException(429, str(error)) from error
 
 
 @app.get("/api/chat/tasks", summary="聊天任务列表", tags=["聊天"])
@@ -118,30 +158,53 @@ def cancel_chat_task(task_id: str) -> dict:
 
 @app.post("/api/chat/stream", summary="SSE流式聊天", tags=["聊天"])
 def chat_stream(request: ChatRequest) -> StreamingResponse:
-    def events():
-        yield "event: node_start\ndata: {\"node\":\"agent\"}\n\n"
-        try:
-            result = SERVICE.chat(request)
-            payload = json.dumps(result, ensure_ascii=False)
-            yield f"event: final\ndata: {payload}\n\n"
-        except Exception as error:
-            payload = json.dumps(
-                {"error": str(error)}, ensure_ascii=False
-            )
-            yield f"event: error\ndata: {payload}\n\n"
+    task = submit_chat_task(request)
 
-    return StreamingResponse(events(), media_type="text/event-stream")
+    async def events():
+        revision = 0
+        finished = False
+        yield 'event: node_start\ndata: {"node":"agent"}\n\n'
+        try:
+            while True:
+                current = SERVICE.chat_task(task["task_id"])
+                for event in current["progress"]:
+                    if event["id"] > revision:
+                        revision = event["id"]
+                        yield "event: node_progress\ndata: " + json.dumps(event, ensure_ascii=False) + "\n\n"
+                if current["status"] == "completed":
+                    finished = True
+                    yield "event: final\ndata: " + json.dumps(current["result"], ensure_ascii=False) + "\n\n"
+                    return
+                if current["status"] in {"failed", "cancelled"}:
+                    finished = True
+                    yield "event: error\ndata: " + json.dumps({"error": current["error"] or "已取消"}, ensure_ascii=False) + "\n\n"
+                    return
+                await asyncio.sleep(0.1)
+        finally:
+            if not finished:
+                SERVICE.cancel_chat_task(task["task_id"])
+
+    return StreamingResponse(events(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+
+
+def read_upload(file: UploadFile, kind: str) -> bytes:
+    limit = UPLOAD_LIMITS[kind]
+    content = file.file.read(limit + 1)
+    if len(content) > limit:
+        raise ValueError("上传文件超过大小限制")
+    return content
 
 
 @app.post("/api/uploads/image", summary="上传图片", tags=["上传"])
-async def upload_image(
+def upload_image(
     session_id: str = Form(...), file: UploadFile = File(...)
 ) -> dict:
     try:
         return SERVICE.save_upload(
             session_id,
             file.filename or "image.jpg",
-            await file.read(),
+            read_upload(file, "image"),
             "image",
         )
     except ValueError as error:
@@ -149,14 +212,14 @@ async def upload_image(
 
 
 @app.post("/api/uploads/pdf", summary="上传PDF", tags=["上传"])
-async def upload_pdf(
+def upload_pdf(
     session_id: str = Form(...), file: UploadFile = File(...)
 ) -> dict:
     try:
         return SERVICE.save_upload(
             session_id,
             file.filename or "document.pdf",
-            await file.read(),
+            read_upload(file, "pdf"),
             "pdf",
         )
     except (ValueError, RuntimeError) as error:
@@ -193,28 +256,20 @@ def update_session(session_id: str, request: SessionUpdate) -> dict:
 
 @app.delete("/api/sessions/{session_id}", summary="删除会话", tags=["会话"])
 def delete_session(session_id: str) -> dict:
-    removed = SERVICE.store.delete_session(session_id)
-    SERVICE.conversations.clear(session_id)
+    removed = SERVICE.delete_session(session_id)
     return {"deleted": removed, "session_id": session_id}
 
 
 @app.get("/api/sessions/{session_id}/export", summary="导出会话", tags=["会话"])
-def export_session(session_id: str) -> FileResponse:
+def export_session(session_id: str) -> Response:
     try:
         session = SERVICE.store.get_session(session_id)
     except KeyError as error:
         raise HTTPException(404, "会话不存在") from error
-    export_dir = SERVICE.paths.sessions_dir / "exports"
-    export_dir.mkdir(parents=True, exist_ok=True)
-    target = export_dir / f"{session_id}.json"
-    target.write_text(
+    return Response(
         json.dumps(session, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    return FileResponse(
-        target,
         media_type="application/json",
-        filename=target.name,
+        headers={"Content-Disposition": 'attachment; filename="session.json"'},
     )
 
 
@@ -241,7 +296,15 @@ def list_resources(
 @app.get("/files/{relative_path:path}", summary="本地文件访问", tags=["文件"])
 def local_file(relative_path: str) -> FileResponse:
     target = (ROOT / relative_path).resolve()
-    if ROOT not in target.parents or not target.is_file():
+    public_dirs = (
+        "data/mrag/images", "data/mrag/pdfs", "data/mrag/pdf_figures",
+        "data/mrag/uploads", "data/mrag/network_images",
+        "data/mrag/raganything/extracted_assets", "data/mrag/raganything/book_native",
+        "data/outputs",
+    )
+    allowed = any(target.is_relative_to((ROOT / directory).resolve()) for directory in public_dirs)
+    if (not allowed or not target.is_relative_to(ROOT.resolve()) or not target.is_file()
+            or target.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".pdf"}):
         raise HTTPException(404, "文件不存在")
     return FileResponse(target)
 
@@ -254,7 +317,7 @@ def detect_objects(
         upload = SERVICE.save_upload(
             session_id,
             file.filename or "image.jpg",
-            file.read(),
+            read_upload(file, "image"),
             "image",
         )
     except ValueError as error:

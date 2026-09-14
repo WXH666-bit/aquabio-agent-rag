@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="Luidia sarsii africana">
+  <data key="d0">Luidia sarsii africana</data>
+  <data key="d1">taxon</data>
+  <data key="d2">A starfish taxon in the family Luidiidae, order Paxillosida, class Asteroidea, phylum Echinodermata; common name Legs break easily starfish; arms break off easily, distinct spines on aboral margin, long flexible flattened tapering arms, usually five; colour brown to dark pink; size up to 150 mm diameter; distribution Southern African endemic along West and South Coasts of South Africa to Port Elizabeth at 54-360+ m depth; similar to Astropecten polyacanthus and Astropecten exilis but with more flattened broader arms and easy arm breakage.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Echinodermata">
+  <data key="d0">Echinodermata</data>
+  <data key="d1">taxon</data>
+  <data key="d2">Phylum containing starfish such as Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Asteroidea">
+  <data key="d0">Asteroidea</data>
+  <data key="d1">taxon</data>
+  <data key="d2">Class of starfish that includes Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Paxillosida">
+  <data key="d0">Paxillosida</data>
+  <data key="d1">taxon</data>
+  <data key="d2">Order of starfish that includes Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Luidiidae">
+  <data key="d0">Luidiidae</data>
+  <data key="d1">taxon</data>
+  <data key="d2">Family of starfish that includes Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Luidia">
+  <data key="d0">Luidia</data>
+  <data key="d1">taxon</data>
+  <data key="d2">Genus of starfish that includes Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Astropecten polyacanthus">
+  <data key="d0">Astropecten polyacanthus</data>
+  <data key="d1">taxon</data>
+  <data key="d2">A starfish species similar to Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Astropecten exilis">
+  <data key="d0">Astropecten exilis</data>
+  <data key="d1">taxon</data>
+  <data key="d2">A starfish species similar to Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Arms">
+  <data key="d0">Arms</data>
+  <data key="d1">anatomical_feature</data>
+  <data key="d2">Long, flexible, flattened, tapering, strap-like appendages of Luidia sarsii africana, usually five in number and capable of breaking off easily from the central disc.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Central disc">
+  <data key="d0">Central disc</data>
+  <data key="d1">anatomical_feature</data>
+  <data key="d2">Central part of Luidia sarsii africana from which the arms can break off easily.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Aboral margin edge">
+  <data key="d0">Aboral margin edge</data>
+  <data key="d1">anatomical_feature</data>
+  <data key="d2">Edge on the aboral side of Luidia sarsii africana where distinct spines protrude.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Spines">
+  <data key="d0">Spines</data>
+  <data key="d1">anatomical_feature</data>
+  <data key="d2">Distinct spines protruding from the aboral margin edge of Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Luidia sarsii africana Distribution">
+  <data key="d0">Luidia sarsii africana Distribution</data>
+  <data key="d1">distribution</data>
+  <data key="d2">Southern African endemic distribution of Luidia sarsii africana along the West and South Coasts of South Africa to Port Elizabeth at depths of 54 to 360+ meters.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Starfishes of the Atlantic">
+  <data key="d0">Starfishes of the Atlantic</data>
+  <data key="d1">document</data>
+  <data key="d2">Reference document cited for information on Luidia sarsii africana, authored by Clark AM and Downey ME, 1992.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Field Guide to SA Offshore Marine Invertebrates">
+  <data key="d0">Field Guide to SA Offshore Marine Invertebrates</data>
+  <data key="d1">document</data>
+  <data key="d2">Source document containing information on Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380570</data>
+  <data key="d6"></data>
+</node>
+<node id="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf">
+  <data key="d0">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d1">document</data>
+  <data key="d2">The source document is a field guide to South African offshore marine invertebrates, containing information on Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Starfishes of the Atlantic (Volume 3)">
+  <data key="d0">Starfishes of the Atlantic (Volume 3)</data>
+  <data key="d1">document</data>
+  <data key="d2">Reference document authored by Clark AM and Downey ME (1992) that provides information on Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Taxonomy">
+  <data key="d0">Taxonomy</data>
+  <data key="d1">section</data>
+  <data key="d2">The taxonomy section of the source document contains the taxonomic classification of Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Distinguishing Features">
+  <data key="d0">Distinguishing Features</data>
+  <data key="d1">section</data>
+  <data key="d2">The distinguishing features section of the source document describes the morphological characteristics of Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Colour">
+  <data key="d0">Colour</data>
+  <data key="d1">section</data>
+  <data key="d2">The colour section of the source document specifies the colouration of Luidia sarsii africana as brown to dark pink.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Size">
+  <data key="d0">Size</data>
+  <data key="d1">section</data>
+  <data key="d2">The size section of the source document provides size information for Luidia sarsii africana, with an average diameter up to 150 mm.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Distribution">
+  <data key="d0">Distribution</data>
+  <data key="d1">section</data>
+  <data key="d2">The distribution section of the source document details the geographic and depth range of Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="Similar Species">
+  <data key="d0">Similar Species</data>
+  <data key="d1">section</data>
+  <data key="d2">The similar species section of the source document lists species similar to Luidia sarsii africana and their distinguishing differences.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<node id="References">
+  <data key="d0">References</data>
+  <data key="d1">section</data>
+  <data key="d2">The references section of the source document lists cited sources for information on Luidia sarsii africana.</data>
+  <data key="d3">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d4">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d5">1789380571</data>
+  <data key="d6"></data>
+</node>
+<edge source="Luidia sarsii africana" target="Echinodermata">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana belongs to the phylum Echinodermata.</data>
+  <data key="d9">classification,taxonomy</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Asteroidea">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana belongs to the class Asteroidea.</data>
+  <data key="d9">classification,taxonomy</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Paxillosida">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana belongs to the order Paxillosida.</data>
+  <data key="d9">classification,taxonomy</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Luidiidae">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana belongs to the family Luidiidae.</data>
+  <data key="d9">classification,taxonomy</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Luidia">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana belongs to the genus Luidia.</data>
+  <data key="d9">classification,taxonomy</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Arms">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana has arms.</data>
+  <data key="d9">anatomy,body part</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Central disc">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana has a central disc.</data>
+  <data key="d9">anatomy,body part</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Spines">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana has spines.</data>
+  <data key="d9">anatomy,body part</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Aboral margin edge">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana has an aboral margin edge.</data>
+  <data key="d9">anatomy,body part</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Luidia sarsii africana Distribution">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana is distributed in Southern African endemic, West and South Coasts of South Africa to Port Elizabeth at depths of 54-360+ m.</data>
+  <data key="d9">distribution,range</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Astropecten polyacanthus">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana is similar to Astropecten polyacanthus but differs by having more flattened and broader arms and breaking off central disc easily.</data>
+  <data key="d9">comparison,similarity</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Astropecten exilis">
+  <data key="d7">1.0</data>
+  <data key="d8">Luidia sarsii africana is similar to Astropecten exilis but differs by having more flattened and broader arms and breaking off central disc easily.</data>
+  <data key="d9">comparison,similarity</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Starfishes of the Atlantic">
+  <data key="d7">1.0</data>
+  <data key="d8">Information on Luidia sarsii africana is cited from the document Starfishes of the Atlantic.</data>
+  <data key="d9">citation,reference</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Field Guide to SA Offshore Marine Invertebrates">
+  <data key="d7">1.0</data>
+  <data key="d8">The field guide contains information about Luidia sarsii africana.</data>
+  <data key="d9">document,source</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains information about Luidia sarsii africana.</data>
+  <data key="d9">source,taxon information</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Starfishes of the Atlantic (Volume 3)">
+  <data key="d7">1.0</data>
+  <data key="d8">Information on Luidia sarsii africana is cited from the document Starfishes of the Atlantic (Volume 3).</data>
+  <data key="d9">citation,reference</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Taxonomy">
+  <data key="d7">1.0</data>
+  <data key="d8">The taxonomy section provides the taxonomic classification of Luidia sarsii africana.</data>
+  <data key="d9">species information,taxonomic classification</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Distinguishing Features">
+  <data key="d7">1.0</data>
+  <data key="d8">The distinguishing features section describes the morphological traits of Luidia sarsii africana.</data>
+  <data key="d9">morphology,species description</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Colour">
+  <data key="d7">1.0</data>
+  <data key="d8">The colour section specifies the colour of Luidia sarsii africana as brown to dark pink.</data>
+  <data key="d9">colouration,species trait</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Size">
+  <data key="d7">1.0</data>
+  <data key="d8">The size section provides the size range of Luidia sarsii africana.</data>
+  <data key="d9">size,species trait</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Distribution">
+  <data key="d7">1.0</data>
+  <data key="d8">The distribution section details the geographic and depth distribution of Luidia sarsii africana.</data>
+  <data key="d9">geographic range,habitat</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="Similar Species">
+  <data key="d7">1.0</data>
+  <data key="d8">The similar species section lists and compares species similar to Luidia sarsii africana.</data>
+  <data key="d9">similar taxa,species comparison</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Luidia sarsii africana" target="References">
+  <data key="d7">1.0</data>
+  <data key="d8">The references section lists sources cited for information on Luidia sarsii africana.</data>
+  <data key="d9">citation,source information</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Arms" target="Central disc">
+  <data key="d7">1.0</data>
+  <data key="d8">Arms of Luidia sarsii africana break off easily from the central disc.</data>
+  <data key="d9">autotomy,fragility</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Aboral margin edge" target="Spines">
+  <data key="d7">1.0</data>
+  <data key="d8">Spines protrude from the aboral margin edge of Luidia sarsii africana.</data>
+  <data key="d9">anatomical location,protrusion</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Taxonomy">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a taxonomy section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Distinguishing Features">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a distinguishing features section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Colour">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a colour section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Size">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a size section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Distribution">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a distribution section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="Similar Species">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a similar species section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf" target="References">
+  <data key="d7">1.0</data>
+  <data key="d8">The source document contains a references section.</data>
+  <data key="d9">content section,document structure</data>
+  <data key="d10">chunk-e079ae16950de487467ccdcc018dc76d</data>
+  <data key="d11">Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf</data>
+  <data key="d12">1789380571</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

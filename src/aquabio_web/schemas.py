@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+from aquabio_mrag.conversation import ConversationStore
 
 
 class ChatOptions(BaseModel):
@@ -24,14 +25,21 @@ class AttachmentRef(BaseModel):
     type: str
 
 
-class ChatRequest(BaseModel):
+class SessionModel(BaseModel):
+    @field_validator("session_id", check_fields=False)
+    @classmethod
+    def validate_session_id(cls, value):
+        return ConversationStore.normalize_session_id(value) if value is not None else value
+
+
+class ChatRequest(SessionModel):
     session_id: str
     query: str = ""
     attachments: list[AttachmentRef] = Field(default_factory=list)
     options: ChatOptions = Field(default_factory=ChatOptions)
 
 
-class SessionCreate(BaseModel):
+class SessionCreate(SessionModel):
     title: str = "新会话"
     session_id: str | None = None
 
@@ -42,7 +50,7 @@ class SessionUpdate(BaseModel):
     tags: list[str] | None = None
 
 
-class FeedbackRequest(BaseModel):
+class FeedbackRequest(SessionModel):
     session_id: str
     turn_id: str
     rating: int = Field(ge=-1, le=1)

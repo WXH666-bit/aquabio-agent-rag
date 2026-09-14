@@ -24,6 +24,15 @@ class OpenRouterClient:
             self.settings.api_key and "replace_with" not in self.settings.api_key
         )
 
+    def _provider_options(self, max_tokens: int) -> dict[str, Any]:
+        if self.settings.provider == "stepfun":
+            return {
+                "reasoning_effort": os.getenv("STEPFUN_REASONING_EFFORT", "low"),
+                "max_tokens": max(max_tokens, int(os.getenv("STEPFUN_MIN_MAX_TOKENS", "8192"))),
+                "temperature": float(os.getenv("STEPFUN_TEMPERATURE", "1")),
+            }
+        return {}
+
     def _headers(self) -> dict[str, str]:
         headers = {
             "Authorization": f"Bearer {self.settings.api_key}",
@@ -97,6 +106,8 @@ class OpenRouterClient:
             "temperature": 0.2,
             "max_tokens": max_tokens,
         }
+        if self.settings.provider == "stepfun":
+            payload.update(self._provider_options(max_tokens))
         if self.settings.provider == "openrouter":
             payload["reasoning"] = {"effort": "low", "exclude": True}
         if response_schema:
@@ -140,6 +151,8 @@ class OpenRouterClient:
             raise self._provider_error(response)
         choice = response.json()["choices"][0]
         answer = self._choice_text(choice)
+        if not answer.strip():
+            raise RuntimeError(f"LLM returned empty content (finish_reason={choice.get('finish_reason', 'unknown')})")
         if response_schema:
             return answer
 
@@ -166,6 +179,7 @@ class OpenRouterClient:
                     "messages": retry_messages,
                     "temperature": 0.1,
                     "max_tokens": max(max_tokens, 3200),
+                    **self._provider_options(max(max_tokens, 3200)),
                     **(
                         {"reasoning": {"effort": "low", "exclude": True}}
                         if self.settings.provider == "openrouter"
@@ -200,6 +214,7 @@ class OpenRouterClient:
             "tool_choice": "auto",
             "temperature": 0,
             "max_tokens": max_tokens,
+            **self._provider_options(max_tokens),
         }
         response = requests.post(
             f"{self.settings.base_url.rstrip('/')}/chat/completions",
@@ -209,7 +224,10 @@ class OpenRouterClient:
         )
         if not response.ok:
             raise self._provider_error(response)
-        message = response.json()["choices"][0].get("message", {})
+        choice = response.json()["choices"][0]
+        message = choice.get("message", {})
+        if choice.get("finish_reason") == "length":
+            raise RuntimeError("LLM tool selection exhausted the token budget")
         calls = []
         for call in message.get("tool_calls", []) or []:
             function = call.get("function", {})

@@ -2,6 +2,13 @@ from __future__ import annotations
 
 import json
 import unittest
+import tempfile
+import shutil
+import subprocess
+import sys
+from unittest.mock import patch
+from dataclasses import replace
+from support import isolated_paths
 from collections import Counter
 from pathlib import Path
 
@@ -59,8 +66,13 @@ class StrictMRAGDataTests(unittest.TestCase):
             self.assertTrue(row["embedding_text"].strip())
 
     def test_chroma_count_matches_manifest(self) -> None:
-        store = ChromaMRAGStore(PATHS, MRAGSettings.from_env())
-        info = store.info()
+        with tempfile.TemporaryDirectory() as directory:
+            paths = isolated_paths(PATHS, directory)
+            shutil.copytree(PATHS.vector_dir, paths.vector_dir)
+            code = "from pathlib import Path; from dataclasses import replace; import json; from aquabio_mrag.config import MRAGPaths,MRAGSettings; from aquabio_mrag.vector_db import ChromaMRAGStore; import sys; p=replace(MRAGPaths.from_root(Path.cwd()), vector_dir=Path(sys.argv[1])); s=ChromaMRAGStore(p, MRAGSettings.from_env()); info=s.info(); info['starfish_text_count']=len(s.collection().get(where={'$and':[{'species_id':'starfish'},{'source_type':'species_text_chunk'}]})['ids']); print(json.dumps(info))"
+            result = subprocess.run([sys.executable, "-B", "-c", code, str(paths.vector_dir)], capture_output=True, text=True, check=True, timeout=60)
+            info = json.loads(result.stdout.strip().splitlines()[-1])
+        self.assertEqual(info["starfish_text_count"], 8)
         self.assertEqual(info["count"], 772)
         self.assertEqual(info["document_count"], 772)
         self.assertEqual(info["collection_count"], 772)
@@ -69,8 +81,13 @@ class StrictMRAGDataTests(unittest.TestCase):
 class StrictMRAGRoutingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.directory = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(cls.directory.cleanup)
+        client = patch("aquabio_mrag.vector_db.chromadb.PersistentClient")
+        client.start()
+        cls.addClassCleanup(client.stop)
         cls.workflow = AquaBioMRAGWorkflow(
-            PATHS, MRAGSettings.from_env(), offline=True
+            isolated_paths(PATHS, cls.directory.name), MRAGSettings.from_env(), offline=True
         )
 
     def route(self, query: str, image_path: str | None = None) -> str:

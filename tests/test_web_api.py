@@ -258,6 +258,13 @@ class WebStoreTests(unittest.TestCase):
 
 class FastAPITests(unittest.TestCase):
     def setUp(self) -> None:
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        service = ChatService(Path(directory.name))
+        self.addCleanup(service.close)
+        service_patch = patch("aquabio_web.api.SERVICE", service)
+        service_patch.start()
+        self.addCleanup(service_patch.stop)
         self.client = TestClient(app)
 
     def test_health_and_session_crud(self) -> None:

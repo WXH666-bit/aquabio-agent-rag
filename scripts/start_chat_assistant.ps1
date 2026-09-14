@@ -14,7 +14,7 @@ if (-not (Test-Path $Python)) {
     throw "Project virtual environment not found: $Python"
 }
 if (-not (Test-Path $RagPython)) {
-    throw "RAG-Anything virtual environment not found: $RagPython"
+    $RagPython = $Python
 }
 
 $LogDir = Join-Path $Root "data\mrag\logs"
@@ -134,7 +134,7 @@ if ($Visible) {
     $env:AQUABIO_RAG_MCP_TRANSPORT = "streamable-http"
     $env:AQUABIO_RAG_MCP_PORT = "$McpPort"
     $env:PYTHONPATH = (Join-Path $Root "src")
-    $env:HF_HOME = if ($env:HF_HOME) { $env:HF_HOME } else { "F:\huggingface" }
+    $env:HF_HOME = if ($env:HF_HOME) { $env:HF_HOME } else { Join-Path $env:USERPROFILE ".cache\huggingface" }
     $env:HUGGINGFACE_HUB_CACHE = if ($env:HUGGINGFACE_HUB_CACHE) {
         $env:HUGGINGFACE_HUB_CACHE
     } else {

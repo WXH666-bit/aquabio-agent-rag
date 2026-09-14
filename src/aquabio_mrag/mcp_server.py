@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from mcp.server.fastmcp import FastMCP
@@ -20,7 +21,7 @@ from .config import MRAGPaths, MRAGSettings
 from .retrieval import MultiSourceRetriever, RetrievalRequest
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.getenv("AQUABIO_PROJECT_ROOT", str(Path.cwd()))).resolve()
 PATHS = MRAGPaths.from_root(ROOT)
 SETTINGS = MRAGSettings.from_env()
 RETRIEVER = MultiSourceRetriever(PATHS, SETTINGS)
@@ -31,18 +32,18 @@ mcp = FastMCP("AquaBio-MRAG Tools")
 
 
 @mcp.tool()
-def search_species_text(query: str, top_k: int = 6) -> str:
+def search_species_text(query: str, top_k: int = 6, candidate_species: str = "") -> str:
     """Search species cards and species text chunks."""
     return json.dumps(
-        RETRIEVER.text_search(query, top_k=top_k), ensure_ascii=False
+        RETRIEVER.text_search(query, top_k=top_k, species_ids=[x.strip() for x in candidate_species.split(",") if x.strip()] or None), ensure_ascii=False
     )
 
 
 @mcp.tool()
-def search_image_captions(query: str, top_k: int = 6) -> str:
+def search_image_captions(query: str, top_k: int = 6, candidate_species: str = "") -> str:
     """Search image captions and image-text pairs."""
     return json.dumps(
-        RETRIEVER.image_search(query, top_k=top_k), ensure_ascii=False
+        RETRIEVER.image_search(query, top_k=top_k, species_ids=[x.strip() for x in candidate_species.split(",") if x.strip()] or None), ensure_ascii=False
     )
 
 

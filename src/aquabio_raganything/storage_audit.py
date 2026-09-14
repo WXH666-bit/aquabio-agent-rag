@@ -72,6 +72,12 @@ def audit_persistent_storages(
         "full_entity_metadata": counts["full_entities"] > 0,
         "full_relation_metadata": counts["full_relations"] > 0,
     }
+    if doc_id:
+        required["document_processed"] = doc_status.get("status") == "processed"
+        for store in ("full_entities", "full_relations"):
+            path = working / f"kv_store_{store}.json"
+            records = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
+            required[f"document_{store}"] = bool(records.get(doc_id))
     return {
         "valid": all(required.values()),
         "required": required,

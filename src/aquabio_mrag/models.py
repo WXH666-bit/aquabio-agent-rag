@@ -119,6 +119,7 @@ class AquaBioState(TypedDict, total=False):
     session_initialized: bool
     conversation_history: list[dict[str, Any]]
     memory_summary: dict[str, Any]
+    pending_memory_turn: dict[str, Any]
     resolved_query: str
     resolved_species_ids: list[str]
     followup_detected: bool

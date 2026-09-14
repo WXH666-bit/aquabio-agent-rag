@@ -49,7 +49,7 @@ async def _query_rag(
         _QUERY_RAG_LOCK = asyncio.Lock()
     async with _QUERY_RAG_LOCK:
         if key not in _QUERY_RAGS:
-            _QUERY_RAGS[key] = create_rag(paths, settings)
+            _QUERY_RAGS[key] = create_rag(paths, settings, prepared_only=True)
         if key not in _QUERY_RAG_READY:
             await ensure_initialized(_QUERY_RAGS[key])
             _QUERY_RAG_READY.add(key)
@@ -446,6 +446,7 @@ async def hybrid_search(
             top_k=top_k,
             chunk_top_k=top_k,
             vlm_enhanced=False,
+            enable_rerank=False,
         ),
         timeout=query_timeout,
     )

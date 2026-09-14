@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 import asyncio
-import base64
 import json
 import os
 import sys
-from functools import partial
 from pathlib import Path
 from typing import Any
 
@@ -24,9 +22,17 @@ class LocalBGEEmbedding:
     def __init__(self, settings: RAGAnythingSettings):
         self.settings = settings
         self._model = None
+        self._onnx = None
 
     def _load(self):
         if self._model is None:
+            if os.getenv("MRAG_EMBEDDING_BACKEND") == "onnx":
+                if self.settings.embedding_model.removeprefix("sentence-transformers/") != "all-MiniLM-L6-v2" or self.settings.embedding_dim != 384:
+                    raise ValueError("ONNX backend requires MiniLM and 384 dimensions")
+                from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+                self._onnx = ONNXMiniLM_L6_V2()
+                self._model = self._onnx
+                return self._model
             from sentence_transformers import SentenceTransformer
 
             kwargs: dict[str, Any] = {
@@ -34,14 +40,20 @@ class LocalBGEEmbedding:
             }
             if self.settings.model_cache:
                 kwargs["cache_folder"] = self.settings.model_cache
-            self._model = SentenceTransformer(
-                self.settings.embedding_model,
-                **kwargs,
-            )
+            try:
+                self._model = SentenceTransformer(self.settings.embedding_model, **kwargs)
+            except Exception:
+                if self.settings.embedding_model.removeprefix("sentence-transformers/") != "all-MiniLM-L6-v2" or self.settings.embedding_dim != 384:
+                    raise
+                from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+                self._onnx = ONNXMiniLM_L6_V2()
+                self._model = self._onnx
         return self._model
 
     async def __call__(self, texts: list[str]) -> np.ndarray:
-        model = self._load()
+        model = await asyncio.to_thread(self._load)
+        if self._onnx is not None:
+            return np.asarray(await asyncio.to_thread(self._onnx, texts), dtype=np.float32)
         return await asyncio.to_thread(
             model.encode,
             texts,
@@ -132,6 +144,7 @@ def _messages_to_prompt(messages: list[dict]) -> tuple[str, str | None]:
 def create_rag(
     paths: RAGAnythingPaths,
     settings: RAGAnythingSettings,
+    *, prepared_only: bool = False,
 ):
     scripts_dir = str(Path(sys.executable).resolve().parent)
     path_entries = os.environ.get("PATH", "").split(os.pathsep)
@@ -146,20 +159,19 @@ def create_rag(
     except ImportError as exc:
         raise RuntimeError(
             "RAG-Anything environment is not installed. Run this command with "
-            ".venv-raganything after installing the local RAG-Anything source."
+            "the project environment after installing the raganything extra."
         ) from exc
 
     use_deepseek = settings.text_llm_provider == "deepseek"
-    use_qwen = settings.text_llm_provider == "qwen"
+    use_qwen = settings.text_llm_provider in {"qwen", "stepfun"}
     qwen_settings = None
     if use_qwen:
         from aquabio.config import Settings
 
         qwen_settings = Settings.from_env()
-        if qwen_settings.provider != "qwen" or not qwen_settings.api_key:
+        if qwen_settings.provider != settings.text_llm_provider or not qwen_settings.api_key:
             raise RuntimeError(
-                "Qwen is selected for LightRAG queries, but no Qwen key "
-                "was found."
+                "Selected graph provider has no matching API key."
             )
     if use_deepseek and not settings.deepseek_api_key:
         raise RuntimeError(
@@ -192,9 +204,22 @@ def create_rag(
         **kwargs,
     ):
         kwargs.pop("hashing_kv", None)
+        kwargs.setdefault("max_tokens", 8192)
+        if settings.text_llm_provider == "stepfun":
+            kwargs.setdefault("reasoning_effort", os.getenv("STEPFUN_REASONING_EFFORT", "low"))
+        kwargs.setdefault("timeout", float(os.getenv("AQUABIO_LLM_READ_TIMEOUT", "90")))
         keyword_extraction = bool(
             kwargs.pop("keyword_extraction", False)
         )
+        if settings.text_llm_provider == "stepfun":
+            from aquabio.openrouter import OpenRouterClient
+            messages = ([{"role": "system", "content": system_prompt}] if system_prompt else [])
+            messages += history_messages or []
+            messages.append({"role": "user", "content": prompt})
+            return await asyncio.to_thread(
+                OpenRouterClient(qwen_settings).chat, messages,
+                max_tokens=int(os.getenv("RAGANYTHING_LLM_MAX_TOKENS", "32768")), max_continuations=0,
+            )
         return await openai_complete_if_cache(
             text_model,
             prompt,
@@ -219,6 +244,14 @@ def create_rag(
         messages: list[dict] | None = None,
         **kwargs,
     ):
+        if settings.text_llm_provider == "stepfun":
+            from aquabio.openrouter import OpenRouterClient
+            if messages is None:
+                content = [{"type": "text", "text": prompt}]
+                if image_data:
+                    content.append({"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + image_data}})
+                messages = ([{"role": "system", "content": system_prompt}] if system_prompt else []) + (history_messages or []) + [{"role": "user", "content": content}]
+            return await asyncio.to_thread(OpenRouterClient(qwen_settings).chat, messages, max_tokens=8192, max_continuations=0)
         if not settings.gemini_api_key:
             return await llm_model_func(
                 prompt,
@@ -261,7 +294,7 @@ def create_rag(
         include_captions=True,
         use_full_path=False,
     )
-    return RAGAnything(
+    rag = RAGAnything(
         config=config,
         llm_model_func=llm_model_func,
         vision_model_func=vision_model_func,
@@ -274,6 +307,8 @@ def create_rag(
             "llm_model_name": text_model,
             "llm_model_max_async": 1,
             "embedding_func_max_async": 1,
+            "default_embedding_timeout": 120,
+            "default_llm_timeout": float(os.getenv("AQUABIO_LLM_READ_TIMEOUT", "90")),
             "max_parallel_insert": 1,
             "enable_llm_cache": True,
             "addon_params": {
@@ -282,6 +317,12 @@ def create_rag(
             },
         },
     )
+
+    if prepared_only:
+        # RAGAnything 1.4 checks MinerU even for pre-parsed content and queries.
+        # This mode never parses a file; raw PDF indexing still checks MinerU.
+        rag._parser_installation_checked = True
+    return rag
 
 
 async def ensure_initialized(rag) -> None:

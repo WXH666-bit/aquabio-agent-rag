@@ -5,6 +5,7 @@ import math
 import os
 import re
 import time
+import threading
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -33,6 +34,9 @@ class BookNativeBM25:
             ).glob("*/rag_chunks.jsonl")
         )
         self._rows: list[dict[str, Any]] | None = None
+        self._index_lock = threading.RLock()
+        self._signature = None
+        self._statistics = None
 
     def _load(self) -> list[dict[str, Any]]:
         if self._rows is None:
@@ -45,18 +49,28 @@ class BookNativeBM25:
         return self._rows
 
     def search(self, query: str, top_k: int = 12) -> list[EvidenceItem]:
-        rows = self._load()
         query_tokens = _tokens(query)
-        if not rows or not query_tokens:
+        if not query_tokens:
             return []
-        document_tokens = [_tokens(row.get("content", "")) for row in rows]
-        document_frequency = Counter()
-        for tokens in document_tokens:
-            document_frequency.update(set(tokens))
-        average_length = sum(map(len, document_tokens)) / max(1, len(rows))
+        with self._index_lock:
+            signature = tuple((str(path), path.stat().st_mtime_ns, path.stat().st_size) for path in self.paths)
+            if signature != self._signature:
+                self._rows = None
+                rows = self._load()
+                tokens = [_tokens(row.get("content", "")) for row in rows]
+                frequency = Counter()
+                for terms in tokens:
+                    frequency.update(set(terms))
+                self._statistics = (
+                    rows, [(Counter(terms), len(terms)) for terms in tokens],
+                    frequency, sum(map(len, tokens)) / max(1, len(rows)),
+                )
+                self._signature = signature
+            rows, document_stats, document_frequency, average_length = self._statistics
+        if not rows:
+            return []
         scored = []
-        for row, tokens in zip(rows, document_tokens):
-            frequencies = Counter(tokens)
+        for row, (frequencies, length) in zip(rows, document_stats):
             score = 0.0
             for term in query_tokens:
                 frequency = frequencies[term]
@@ -68,7 +82,7 @@ class BookNativeBM25:
                     / (document_frequency[term] + 0.5)
                 )
                 denominator = frequency + 1.5 * (
-                    0.25 + 0.75 * len(tokens) / max(1.0, average_length)
+                    0.25 + 0.75 * length / max(1.0, average_length)
                 )
                 score += inverse * frequency * 2.5 / denominator
             if score:
@@ -712,7 +726,7 @@ class RetrievalAgent:
         species_ids: list[str] | None = None,
     ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         """Search species text via Chroma MCP tool."""
-        arguments = {"query": query, "top_k": top_k}
+        arguments = {"query": query, "top_k": top_k, "candidate_species": ",".join(species_ids or [])}
         started = time.perf_counter()
         rows = self._call_chroma_mcp("search_species_text", arguments)
         normalized = self._normalize_chroma_rows(rows, "mcp_chroma_text")
@@ -745,7 +759,7 @@ class RetrievalAgent:
         species_ids: list[str] | None = None,
     ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         """Search image captions via Chroma MCP tool."""
-        arguments = {"query": query, "top_k": top_k}
+        arguments = {"query": query, "top_k": top_k, "candidate_species": ",".join(species_ids or [])}
         started = time.perf_counter()
         rows = self._call_chroma_mcp("search_image_captions", arguments)
         normalized = self._normalize_chroma_rows(rows, "mcp_chroma_image")

@@ -1,0 +1,16 @@
+{
+  "chunk-e079ae16950de487467ccdcc018dc76d": {
+    "tokens": 701,
+    "content": "[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=taxonomy]\nTaxon: Luidia sarsii africana\nphylum: Echinodermata; class: Asteroidea; order: Paxillosida; family: Luidiidae; genus: Luidia; species: sarsii africana; common name: Legs break easily starfish\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=distinguishing_features]\nTaxon: Luidia sarsii africana\nArms usually break off central disc very easily. Distinct spines protrude from aboral margin edge; arms long, flexible, flattened and tapering, strap-like. Usually five arms.\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=colour]\nTaxon: Luidia sarsii africana\nBrown to dark pink.\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=size]\nTaxon: Luidia sarsii africana\nAverage up to 150 mm diameter, but can get larger individuals.\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=distribution]\nTaxon: Luidia sarsii africana\nSouthern African endemic. West and South Coasts of South Africa, to Port Elizabeth; 54 m to 360+ m depth.\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=similar_species]\nTaxon: Luidia sarsii africana\nAstropecten polyacanthus and Astropecten exilis, however arms of Luidia africana are more flattened and broader, i.e. less tapered, and break off central disc easily.\n\n[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=references]\nTaxon: Luidia sarsii africana\nClark AM and Downey ME. 1992. Starfishes of the Atlantic (Volume 3). Chapman and Hall: London. p. 20. (794pp.).",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc_sa_invertebrates_p0429",
+    "file_path": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "llm_cache_list": [
+      "default:extract:7d23c0a2132847681a841314639bd76a",
+      "default:extract:e334b2db3d5cf0c1f797fa0baa6ed323"
+    ],
+    "create_time": 1789380437,
+    "update_time": 1789380570,
+    "_id": "chunk-e079ae16950de487467ccdcc018dc76d"
+  }
+}

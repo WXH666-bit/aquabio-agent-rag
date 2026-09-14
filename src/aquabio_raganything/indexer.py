@@ -263,6 +263,7 @@ async def index_book_native_units(
     book_id: str,
     resume: bool = False,
     limit_units: int | None = None,
+    unit_id: str | None = None,
 ) -> dict:
     source = (
         paths.book_native_dir
@@ -279,12 +280,16 @@ async def index_book_native_units(
             item = json.loads(line)
             grouped.setdefault(item["unit_id"], []).append(item)
     unit_ids = list(grouped)
+    if unit_id is not None:
+        if unit_id not in grouped:
+            raise ValueError(f"Unknown book unit: {unit_id}")
+        unit_ids = [unit_id]
     if limit_units is not None:
         unit_ids = unit_ids[:limit_units]
     manifest = SegmentManifest(
         paths.manifests_dir / "book_native_status.jsonl"
     )
-    rag = create_rag(paths, settings)
+    rag = create_rag(paths, settings, prepared_only=True)
     await ensure_initialized(rag)
     summary = {
         "book_id": book_id,
@@ -313,11 +318,19 @@ async def index_book_native_units(
                 resume
                 and previous
                 and previous.get("index_status") == "fully_processed"
+                and audit_persistent_storages(paths, doc_id)["valid"]
             ):
                 summary["skipped"] += 1
                 continue
             manifest.update(record, "indexing", error="")
             try:
+                # Retry only this selected incomplete document. RAGAnything can
+                # incorrectly mark failed extraction as processed, which would
+                # otherwise make LightRAG reject every retry as a duplicate.
+                if await rag.lightrag.doc_status.get_by_id(doc_id) and not audit_persistent_storages(paths, doc_id)["valid"]:
+                    deleted = await rag.lightrag.adelete_by_doc_id(doc_id, delete_llm_cache=True)
+                    if deleted.status not in {"success", "not_found"}:
+                        raise RuntimeError(f"Cannot retry incomplete document: {deleted.message}")
                 content_list = [
                     {
                         key: value
@@ -339,14 +352,15 @@ async def index_book_native_units(
                 )
                 await rag.lightrag._insert_done()
                 status = await rag.get_document_processing_status(doc_id)
-                fully_processed = bool(status.get("fully_processed"))
+                storage_audit = audit_persistent_storages(paths, doc_id)
+                fully_processed = bool(status.get("fully_processed")) and storage_audit["valid"]
                 manifest.update(
                     record,
                     "fully_processed" if fully_processed else "failed",
                     parse_status="book_native",
                     text_items=len(content_list),
                     chunks_count=status.get("chunks_count", 0),
-                    error="" if fully_processed else str(status),
+                    error="" if fully_processed else "Storage validation failed: " + ", ".join(storage_audit["missing"]),
                 )
                 summary[
                     "fully_processed" if fully_processed else "failed"

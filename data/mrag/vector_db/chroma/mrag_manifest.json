@@ -1,0 +1,15 @@
+{
+  "collection_name": "aquabio_mrag",
+  "logical_collection_name": "aquabio_mrag",
+  "document_file": "data/mrag/knowledge/rag_documents_combined.jsonl",
+  "document_count": 772,
+  "collection_count": 772,
+  "source_counts": {
+    "species_card": 20,
+    "species_text_chunk": 160,
+    "image_doc": 200,
+    "multimodal_pair": 200,
+    "pdf_chunk": 192
+  },
+  "metadata_repaired_at": "2026-09-14T09:28:26.237309+00:00"
+}

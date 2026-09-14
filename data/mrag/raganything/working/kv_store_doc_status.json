@@ -1,0 +1,21 @@
+{
+  "doc_sa_invertebrates_p0429": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e079ae16950de487467ccdcc018dc76d"
+    ],
+    "content_summary": "[DOC_ID=doc_sa_invertebrates_p0429][SOURCE=Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf][PAGE=429][UNIT_ID=sa_taxon_lucafr_p0429][CHUNK_TYPE=taxonomy]\nTaxon: Luidia sarsii africana\nphylum: Echinodermata; class: Aste...",
+    "content_length": 2344,
+    "created_at": "2026-09-14T10:07:17.153755+00:00",
+    "updated_at": "2026-09-14T10:09:31+00:00",
+    "file_path": "Field-Guide-to-SA-Offshore-Marine-Invertebrates_web-full-version_compressed.pdf",
+    "track_id": "insert_20260914_180717_95dcffc9",
+    "metadata": {
+      "processing_start_time": 1789380437,
+      "processing_end_time": 1789380571
+    },
+    "error_msg": "",
+    "multimodal_processed": true
+  }
+}

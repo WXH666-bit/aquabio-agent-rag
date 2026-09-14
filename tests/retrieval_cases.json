@@ -1,0 +1,56 @@
+[
+  {
+    "id": "zh_starfish",
+    "kind": "text",
+    "query": "海星的外形和常见颜色",
+    "expected_species": "starfish"
+  },
+  {
+    "id": "en_starfish",
+    "kind": "text",
+    "query": "What are the visual features of a starfish?",
+    "expected_species": "starfish"
+  },
+  {
+    "id": "zh_seahorse",
+    "kind": "text",
+    "query": "海马的栖息环境和生活习性",
+    "expected_species": "seahorse"
+  },
+  {
+    "id": "en_jellyfish",
+    "kind": "text",
+    "query": "jellyfish bell shaped body tentacles",
+    "expected_species": "jellyfish"
+  },
+  {
+    "id": "caption_starfish",
+    "kind": "caption",
+    "query": "An orange sea star with five radial arms on the seabed.",
+    "expected_species": "starfish"
+  },
+  {
+    "id": "caption_seahorse",
+    "kind": "caption",
+    "query": "A seahorse with a horse shaped head and curled prehensile tail.",
+    "expected_species": "seahorse"
+  },
+  {
+    "id": "followup_color",
+    "kind": "followup",
+    "query": "它的常见颜色是什么？",
+    "resolved_species": [
+      "starfish"
+    ],
+    "expected_species": "starfish"
+  },
+  {
+    "id": "followup_habitat",
+    "kind": "followup",
+    "query": "它通常生活在哪里？",
+    "resolved_species": [
+      "seahorse"
+    ],
+    "expected_species": "seahorse"
+  }
+]

@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -84,6 +85,9 @@ class MCPStdioClient:
                     result = await session.call_tool(
                         tool_name, arguments=arguments or {}
                     )
+                    if getattr(result, "isError", False):
+                        details = " ".join(item.text for item in result.content if hasattr(item, "text"))
+                        raise RuntimeError(f"MCP tool error: {server}.{tool_name}: {details[:500]}")
                     if (
                         getattr(result, "structuredContent", None)
                         is not None
@@ -145,12 +149,15 @@ class MCPStdioClient:
 def project_mcp_client(root: Path) -> MCPStdioClient:
     root = root.resolve()
     chroma_python = root / ".venv" / "Scripts" / "python.exe"
+    if not chroma_python.is_file():
+        chroma_python = Path(sys.executable)
     graph_python = root / ".venv-raganything" / "Scripts" / "python.exe"
     if not graph_python.is_file():
         graph_python = chroma_python
     pythonpath = str(root / "src")
-    hf_home = os.getenv("HF_HOME", "F:\\huggingface")
+    hf_home = os.getenv("HF_HOME", str(Path.home() / ".cache" / "huggingface"))
     graph_env = {
+        "AQUABIO_PROJECT_ROOT": str(root),
         "PYTHONPATH": pythonpath,
         "HF_HOME": hf_home,
         "HUGGINGFACE_HUB_CACHE": os.getenv(
@@ -165,7 +172,7 @@ def project_mcp_client(root: Path) -> MCPStdioClient:
                 name="chroma",
                 command=str(chroma_python),
                 args=["-m", "aquabio_mrag.mcp_server"],
-                env={"PYTHONPATH": pythonpath},
+                env={"PYTHONPATH": pythonpath, "AQUABIO_PROJECT_ROOT": str(root)},
                 timeout_seconds=120,
             ),
             "raganything": MCPServerConfig(

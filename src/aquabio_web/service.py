@@ -1,20 +1,17 @@
 from __future__ import annotations
 
 import hashlib
-import mimetypes
 import re
 import sys
 import threading
 import time
 import uuid
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import fitz
 
 from aquabio_mrag.config import MRAGPaths, MRAGSettings
-from aquabio_mrag.conversation import ConversationStore
+from aquabio_mrag.conversation import ConversationStore, serialized_session
 from aquabio_raganything.image_rag import (
     DISTRIBUTION_ROLE,
     SPECIMEN_ROLE,
@@ -24,6 +21,9 @@ from aquabio_raganything.image_rag import (
 )
 from .schemas import ChatRequest
 from .store import WebStore
+from .tasks import BackgroundTasks
+from .attachments import AttachmentService
+from aquabio_mrag.cancellation import check_cancelled
 
 
 BOOK_TITLE_BY_FILE = {
@@ -36,7 +36,7 @@ BOOK_TITLE_BY_FILE = {
 }
 
 
-class ChatService:
+class ChatService(BackgroundTasks, AttachmentService):
     def __init__(self, root: Path):
         self.root = root.resolve()
         self.paths = MRAGPaths.from_root(self.root)
@@ -46,8 +46,7 @@ class ChatService:
         self.conversations = ConversationStore(self.paths.sessions_dir)
         self._workflows: dict[bool, Any] = {}
         self._lock = threading.RLock()
-        self._tasks: dict[str, dict[str, Any]] = {}
-        self._task_lock = threading.RLock()
+        self._init_tasks()
         self._warmup_lock = threading.Lock()
         self._warmup = {
             "status": "not_started",
@@ -110,7 +109,9 @@ class ChatService:
         book = str(image.get("book_title") or image.get("source_file") or "").strip()
         page = image.get("page")
         printed = image.get("printed_page")
-        name = scientific or "当前物种"
+        caption_name = str(image.get("caption", "")).removeprefix("File:")
+        caption_name = re.sub(r"[ _-]*(?:distmap|distribution|range|map).*", "", caption_name, flags=re.I).strip()
+        name = scientific or common or caption_name or "当前物种"
         if common:
             name += f"（英文俗名：{common}）"
         if "raganything_pdf_image" in source or source.startswith("pdf"):
@@ -133,7 +134,7 @@ class ChatService:
         return (
             f"{origin}{detail}。"
             f"这张图对应的具体物种是 {scientific or name}，"
-            "不是上位类群整体分布图。"
+            "不代表整个上位类群的分布图。"
         )
 
     @staticmethod
@@ -441,93 +442,6 @@ class ChatService:
                 raise
             return dict(self._warmup)
 
-    def save_upload(
-        self,
-        session_id: str,
-        file_name: str,
-        content: bytes,
-        expected_type: str,
-    ) -> dict[str, Any]:
-        suffix = Path(file_name).suffix.lower()
-        image_suffixes = {".jpg", ".jpeg", ".png", ".webp"}
-        pdf_suffixes = {".pdf"}
-        allowed = image_suffixes if expected_type == "image" else pdf_suffixes
-        if suffix not in allowed:
-            raise ValueError(f"不支持的文件类型：{suffix}")
-        file_id = f"file_{uuid.uuid4().hex}"
-        target_dir = self.paths.uploads_dir / expected_type
-        target_dir.mkdir(parents=True, exist_ok=True)
-        target = target_dir / f"{file_id}{suffix}"
-        target.write_bytes(content)
-        metadata: dict[str, Any] = {
-            "mime_type": mimetypes.guess_type(file_name)[0] or "",
-        }
-        if expected_type == "pdf":
-            document = fitz.open(target)
-            try:
-                metadata["page_count"] = document.page_count
-            finally:
-                document.close()
-        relative = str(target.relative_to(self.root)).replace("\\", "/")
-        row = self.store.save_attachment(
-            session_id,
-            file_id,
-            expected_type,
-            file_name,
-            relative,
-            len(content),
-            metadata,
-        )
-        row["url"] = f"/files/{relative}"
-        return row
-
-    def _pdf_context(self, attachments: list[dict[str, Any]]) -> str:
-        sections = []
-        for attachment in attachments:
-            if attachment["file_type"] != "pdf":
-                continue
-            path = self.root / attachment["file_path"]
-            document = fitz.open(path)
-            try:
-                pages = []
-                total = 0
-                for page_index, page in enumerate(document):
-                    text = " ".join(page.get_text("text").split())
-                    if not text:
-                        continue
-                    excerpt = text[:4000]
-                    pages.append(
-                        f"[UPLOADED_PDF={attachment['file_name']}]"
-                        f"[PAGE={page_index + 1}]\n{excerpt}"
-                    )
-                    total += len(excerpt)
-                    if total >= 16000:
-                        break
-                sections.extend(pages)
-            finally:
-                document.close()
-        return "\n\n".join(sections)
-
-    def _image_path(
-        self, attachment: dict[str, Any]
-    ) -> str:
-        uploaded = (self.root / attachment["file_path"]).resolve()
-        original_name = attachment.get("file_name", "")
-        if not original_name or not uploaded.is_file():
-            return str(uploaded)
-        uploaded_hash = hashlib.sha256(
-            uploaded.read_bytes()
-        ).digest()
-        for candidate in self.paths.images_dir.rglob(original_name):
-            if (
-                candidate.is_file()
-                and candidate.stat().st_size == uploaded.stat().st_size
-                and hashlib.sha256(candidate.read_bytes()).digest()
-                == uploaded_hash
-            ):
-                return str(candidate.resolve())
-        return str(uploaded)
-
     @staticmethod
     def _trace_rows(values: list[str]) -> list[dict[str, Any]]:
         rows = []
@@ -645,6 +559,7 @@ class ChatService:
             },
             "pending_review": False,
         }
+        check_cancelled()
         if request.options.log_enabled:
             self.store.save_turn(
                 request.session_id,
@@ -722,6 +637,7 @@ class ChatService:
             )
         return rows
 
+    @serialized_session
     def chat(
         self,
         request: ChatRequest,
@@ -733,10 +649,13 @@ class ChatService:
             f"query={request.query[:120]!r}",
             flush=True,
         )
+        check_cancelled()
         attachments = [
             self.store.get_attachment(item.file_id)
             for item in request.attachments
         ]
+        if any(item["session_id"] != request.session_id for item in attachments):
+            raise ValueError("附件不属于当前会话")
         image = next(
             (
                 self._image_path(item)
@@ -763,9 +682,7 @@ class ChatService:
             image,
             session_id=request.session_id,
             hitl=request.options.hitl_enabled,
-            options=request.options.model_dump(
-                exclude={"hitl_enabled"}
-            ),
+            options={**request.options.model_dump(exclude={"hitl_enabled"}), "defer_memory_save": True},
             extra_context=pdf_context,
             progress_callback=progress_callback,
         )
@@ -1091,6 +1008,11 @@ class ChatService:
                 response["detection_visualization_url"] = f"/files/{vis_relative}"
             except ValueError:
                 pass
+        check_cancelled()
+        pending_memory = state.get("pending_memory_turn")
+        if request.options.memory_enabled and pending_memory:
+            self.conversations.append_turn(request.session_id, pending_memory, state.get("memory_summary", {}))
+        check_cancelled()
         if request.options.log_enabled:
             assistant_attachments = [
                 {
@@ -1121,145 +1043,13 @@ class ChatService:
         )
         return response
 
-    @staticmethod
-    def _utc_now() -> str:
-        return datetime.now(timezone.utc).isoformat()
-
-    def submit_chat(self, request: ChatRequest) -> dict[str, Any]:
-        task_id = f"task_{uuid.uuid4().hex[:16]}"
-        task = {
-            "task_id": task_id,
-            "session_id": request.session_id,
-            "status": "queued",
-            "stage": "排队等待",
-            "detail": "请求已进入后台任务队列。",
-            "created_at": self._utc_now(),
-            "started_at": "",
-            "finished_at": "",
-            "elapsed_seconds": 0,
-            "result": None,
-            "error": "",
-            "cancel_requested": False,
-        }
-        with self._task_lock:
-            self._tasks[task_id] = task
-        thread = threading.Thread(
-            target=self._run_chat_task,
-            args=(task_id, request),
-            daemon=True,
-            name=f"aquabio-{task_id}",
-        )
-        thread.start()
-        return self.chat_task(task_id)
-
-    def _set_task(self, task_id: str, **values: Any) -> None:
-        with self._task_lock:
-            if task_id in self._tasks:
-                self._tasks[task_id].update(values)
-
-    def _run_chat_task(
-        self, task_id: str, request: ChatRequest
-    ) -> None:
-        started = time.monotonic()
-        self._set_task(
-            task_id,
-            status="running",
-            stage="初始化 Agent",
-            detail="正在加载会话、LangGraph 和模型配置。",
-            started_at=self._utc_now(),
-        )
-        try:
-            self._set_task(
-                task_id,
-                stage="执行 LangGraph",
-                detail=(
-                    "正在进行路由、视觉分析、向量检索、MCP 调用和答案生成。"
-                ),
-            )
-            def report(value: str) -> None:
-                node, _, detail = value.partition(":")
-                self._set_task(
-                    task_id,
-                    stage=f"LangGraph: {node}",
-                    detail=detail or value,
-                )
-
-            result = self.chat(
-                request,
-                progress_callback=report,
-            )
-            if self._tasks[task_id].get("cancel_requested"):
-                self._set_task(
-                    task_id,
-                    status="cancelled",
-                    stage="已取消",
-                    detail="结果已完成，但前端已取消接收。",
-                    result=None,
-                )
-            else:
-                self._set_task(
-                    task_id,
-                    status="completed",
-                    stage="完成",
-                    detail="答案、证据和执行轨迹已生成。",
-                    result=result,
-                )
-        except Exception as error:
-            print(
-                f"[CHAT ERROR] task={task_id} "
-                f"{type(error).__name__}: {error}",
-                flush=True,
-            )
-            self._set_task(
-                task_id,
-                status="failed",
-                stage="执行失败",
-                detail=f"{type(error).__name__}: {error}",
-                error=f"{type(error).__name__}: {error}",
-            )
-        finally:
-            self._set_task(
-                task_id,
-                finished_at=self._utc_now(),
-                elapsed_seconds=round(time.monotonic() - started, 1),
-            )
-
-    def chat_task(self, task_id: str) -> dict[str, Any]:
-        with self._task_lock:
-            if task_id not in self._tasks:
-                raise KeyError(task_id)
-            task = dict(self._tasks[task_id])
-        if task["status"] in {"queued", "running"}:
-            started_at = task.get("started_at")
-            if started_at:
-                started = datetime.fromisoformat(started_at)
-                task["elapsed_seconds"] = round(
-                    (
-                        datetime.now(timezone.utc) - started
-                    ).total_seconds(),
-                    1,
-                )
-        return task
-
-    def chat_tasks(self) -> list[dict[str, Any]]:
-        with self._task_lock:
-            task_ids = list(self._tasks)
-        return [
-            self.chat_task(task_id)
-            for task_id in reversed(task_ids)
-        ]
-
-    def cancel_chat_task(self, task_id: str) -> dict[str, Any]:
-        with self._task_lock:
-            if task_id not in self._tasks:
-                raise KeyError(task_id)
-            if self._tasks[task_id]["status"] in {"queued", "running"}:
-                self._tasks[task_id]["cancel_requested"] = True
-                self._tasks[task_id]["stage"] = "正在取消"
-                self._tasks[task_id]["detail"] = (
-                    "已停止前端等待；当前 Python 调用结束后将丢弃结果。"
-                )
-        return self.chat_task(task_id)
+    @serialized_session
+    def delete_session(self, session_id: str) -> bool:
+        removed = self.store.delete_session(session_id)
+        self.conversations.clear(session_id)
+        for workflow in self._workflows.values():
+            workflow.graph.checkpointer.delete_thread(session_id)
+        return removed
 
     def status(self) -> dict[str, Any]:
         from aquabio_raganything.config import RAGAnythingPaths

@@ -74,7 +74,7 @@ Long flattened arms.
                 "kv_store_full_relations.json",
             ):
                 (working / filename).write_text(
-                    json.dumps({"x": {}}),
+                    json.dumps({doc_id: {"entity_names": ["species", "feature"]}}),
                     encoding="utf-8",
                 )
             graph = nx.Graph()
@@ -86,6 +86,7 @@ Long flattened arms.
             self.assertTrue(
                 audit_persistent_storages(paths, doc_id)["valid"]
             )
+            self.assertFalse(audit_persistent_storages(paths, "other_doc")["valid"])
 
 
 if __name__ == "__main__":

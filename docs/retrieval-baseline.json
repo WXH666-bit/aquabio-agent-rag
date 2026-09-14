@@ -1,0 +1,137 @@
+{
+  "top_k": 6,
+  "cases": 8,
+  "hit_rate": 1.0,
+  "mrr": 0.9,
+  "precision": 0.6875,
+  "results": [
+    {
+      "id": "zh_starfish",
+      "kind": "text",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 0.5,
+      "document_ids": [
+        "text_starfish_overview",
+        "text_starfish_similar_species",
+        "text_starfish_visual_features",
+        "text_sea_cucumber_overview",
+        "text_sea_anemone_overview",
+        "text_sea_urchin_overview"
+      ],
+      "seconds": 38.043
+    },
+    {
+      "id": "en_starfish",
+      "kind": "text",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 0.6666666666666666,
+      "document_ids": [
+        "text_starfish_taxonomy",
+        "text_starfish_overview",
+        "text_starfish_rag_usage",
+        "text_sea_turtle_image_recognition_tips",
+        "text_starfish_image_recognition_tips",
+        "text_sea_urchin_image_recognition_tips"
+      ],
+      "seconds": 0.181
+    },
+    {
+      "id": "zh_seahorse",
+      "kind": "text",
+      "hit": true,
+      "reciprocal_rank": 0.2,
+      "precision": 0.16666666666666666,
+      "document_ids": [
+        "text_sea_urchin_overview",
+        "text_sea_anemone_overview",
+        "text_sea_cucumber_overview",
+        "text_sea_turtle_overview",
+        "text_seahorse_overview",
+        "text_dolphin_overview"
+      ],
+      "seconds": 0.179
+    },
+    {
+      "id": "en_jellyfish",
+      "kind": "text",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 0.16666666666666666,
+      "document_ids": [
+        "text_jellyfish_taxonomy",
+        "text_clownfish_taxonomy",
+        "text_sea_turtle_taxonomy",
+        "text_squid_taxonomy",
+        "text_lobster_taxonomy",
+        "text_sea_urchin_taxonomy"
+      ],
+      "seconds": 0.191
+    },
+    {
+      "id": "caption_starfish",
+      "kind": "caption",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 1.0,
+      "document_ids": [
+        "img_starfish_009",
+        "img_starfish_007",
+        "img_starfish_005",
+        "img_starfish_006",
+        "img_starfish_003",
+        "img_starfish_001"
+      ],
+      "seconds": 0.319
+    },
+    {
+      "id": "caption_seahorse",
+      "kind": "caption",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 1.0,
+      "document_ids": [
+        "img_seahorse_001",
+        "img_seahorse_006",
+        "img_seahorse_007",
+        "img_seahorse_008",
+        "img_seahorse_009",
+        "img_seahorse_010"
+      ],
+      "seconds": 0.195
+    },
+    {
+      "id": "followup_color",
+      "kind": "followup",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 1.0,
+      "document_ids": [
+        "text_starfish_ecology_behavior",
+        "text_starfish_overview",
+        "text_starfish_visual_features",
+        "text_starfish_similar_species",
+        "card_starfish",
+        "text_starfish_habitat"
+      ],
+      "seconds": 0.19
+    },
+    {
+      "id": "followup_habitat",
+      "kind": "followup",
+      "hit": true,
+      "reciprocal_rank": 1.0,
+      "precision": 1.0,
+      "document_ids": [
+        "text_seahorse_ecology_behavior",
+        "text_seahorse_habitat",
+        "text_seahorse_rag_usage",
+        "text_seahorse_overview",
+        "text_seahorse_similar_species",
+        "card_seahorse"
+      ],
+      "seconds": 0.193
+    }
+  ]
+}
